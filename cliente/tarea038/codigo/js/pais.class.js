@@ -23,8 +23,13 @@ function obtenerPaises() {
   });
 }
  function anadirLista(paises){
-    const opciones = paises.map(pais => pais.name.common).sort();
-    const listaNombres=document.getElementById("listaPaises");
+  let radioIngles= document.getElementById('eng');
+  let opciones = paises.map(pais => pais.translations.spa.common).sort();
+  if(radioIngles.checked){
+    opciones = paises.map(pais => pais.translations.spa.common).sort();
+    console.log('ingles');
+  }
+   const listaNombres=document.getElementById("listaPaises");
     opciones.forEach(opcion => {
         const elementoOpcion=document.createElement('option');
         elementoOpcion.value=opcion;
@@ -32,11 +37,23 @@ function obtenerPaises() {
     });
 }
 document.addEventListener('submit', (event) => {
-  event.preventDefault(); // Para evitar que el formulario se envíe y la página se recargue
-  const paisselecionado = document.getElementById('nombre').value;
-  const infoPais = paisesGuardados.find(pais => pais.name.common === paisselecionado);
+  event.preventDefault(); 
+
+  let paisselecionado = document.getElementById('nombre').value;
+  let radioIngles= document.getElementById('eng');
+  console.log(radioIngles);
+  let infoPais = paisesGuardados.find(pais => pais.translations.spa.common === paisselecionado);
+  if(radioIngles.checked){
+     infoPais = paisesGuardados.find(pais => pais.name.common === paisselecionado);
+  }
+  
+   
   if (infoPais) {
-    const nombreOficial = infoPais.name.official;
+    let nombreOficial = infoPais.translations.spa.official;
+    if(radioIngles.checked){
+      nombreOficial = infoPais.name.official
+      console.log('ingles');
+    }
     const bandera = infoPais.flags.png;
     const poblacion = infoPais.population;
 
@@ -47,6 +64,7 @@ document.addEventListener('submit', (event) => {
     divNombreOficial.textContent = `Nombre oficial: ${nombreOficial}`;
     divBandera.innerHTML = `<img src="${bandera}" alt="Bandera de ${nombreOficial}">`;
     divPoblacion.textContent = `Población: ${poblacion.toLocaleString()}`;
+    document.getElementById('nombre').value = ''; 
   } else {
     console.log("País no encontrado");
   }

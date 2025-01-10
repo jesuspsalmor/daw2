@@ -13,8 +13,14 @@
       <form >
         <label for="nombre">Nombre del Pais:</label>
         <input list="listaPaises" id="nombre" />
-        <datalist id="listaPaises"> </datalist>
+        <datalist id="listaPaises"> 
+          <option value=""></option>
+        </datalist>
         <button>Buscar</button>
+        <label for="esp">Español</label>
+        <input type="radio" name="idioma" id="esp" checked>
+        <label for="eng">English</label>
+        <input type="radio" name="idioma" id="eng" >
       </form>
     </section>
     <section id="paisesBuscados" class="glass">
