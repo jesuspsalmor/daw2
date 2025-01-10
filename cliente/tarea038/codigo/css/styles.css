@@ -1,0 +1,59 @@
+body{
+    background-image: url(../imagenes/world-map-background-2ylma7ze1bab7v3l.jpg);
+    width: 100vw;
+    height: 100vh; 
+    color: white;
+    overflow: hidden;
+
+}
+header{
+    justify-self: center;
+}
+.glass{
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    border-radius: 10px;
+    border: 1px solid #ffffff2e;
+ 
+    
+    
+    margin: 10px;
+    padding: 20px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: 
+        "buscador paisesBuscados"
+        "contadorPaises paisesBuscados";
+}
+#buscador{
+    
+    grid-area: buscador;
+    width: max-content;
+}
+#paisesBuscados{
+    height: 70vh;
+    width: 90%;
+    grid-area: paisesBuscados;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+#contadorPaises{
+    grid-area: contadorPaises;
+}
+.infoPaises {
+    font-size: 2em;;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; /* Si deseas centrar los elementos horizontalmente */
+}
+
+
+

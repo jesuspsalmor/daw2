@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <header class="glass"><h1 >Informacion de paises desde Rest Countries</h1></header>
+    
+    <main><section id="buscador"  class="glass">
+      <form >
+        <label for="nombre">Nombre del Pais:</label>
+        <input list="listaPaises" id="nombre" />
+        <datalist id="listaPaises"> </datalist>
+        <button>Buscar</button>
+      </form>
+    </section>
+    <section id="paisesBuscados" class="glass">
+      <div class="titulo"><h2>Detalles de los paises:</h2></div>
+      <div class="infoPaises">
+        <div id="nombreOficial"></div>
+        <div id="bandera"></div>
+        <div id="poblacion"></div>
+      </div>
+    </section>
+    <!-- <section id="contadorPaises" class="glass">
+      <div class="titulo">
+        <h2>Contador de paise disponibles:</h2>
+      </div>
+    </section> -->
+</main>
+<script type="module" src="js/pais.class.js"></script>
+  </body>
+</html>
