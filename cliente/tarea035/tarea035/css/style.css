@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    min-height: 100vh; /* Ajustar la altura mínima */
+    padding: 20px; /* Añadir padding para asegurar espacio alrededor */
+}
+
+#form-addtarea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Asegurarse de que ocupe todo el ancho disponible */
+    max-width: 600px; /* Limitar el ancho máximo */
+    box-sizing: border-box; /* Asegurarse de que el padding se incluya en el tamaño total */
+}
+
+#form-addtarea > * {
+    margin: 5px;
+    width: calc(100% - 10px); /* Asegurarse de que los elementos hijos no excedan el ancho del contenedor */
+    box-sizing: border-box; /* Asegurarse de que el padding y el margin se incluyan en el tamaño total */
+}
+
+#form-addtarea input[type="text"],
+#form-addtarea textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#form-addtarea input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#form-addtarea input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.tareas {
+    
+    width: 100%;
+
+    margin-top: 20px;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.tarjeta {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin: 1%;
+}
+
+.tarjeta:hover {
+    transform: scale(1.02);
+}
+
+.terminada {
+    text-decoration: line-through;
+    filter: blur(1px);
+    color: #888;
+}
