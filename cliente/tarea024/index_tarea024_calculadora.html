@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora con Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .calculator {
+            max-width: 230px; 
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn-calculator {
+            margin: 5px;
+            font-size: large;
+            /* font-family: 'Courier New', Courier, monospace */
+        }
+
+        .btn-operador {
+            margin: 5px;
+            font-family: monospace;
+            font-size:larger
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <h1 class="d-flex justify-content-center">Mi calculadora básica</h1>
+        
+        <!-- container: Esta clase envuelve todo el contenido de la página, proporcionando un contenedor centrado con márgenes automáticos. Hace que el contenido se ajuste al ancho de la pantalla de forma fluida. -->
+        <div class="calculator bg-warning-subtle">
+            <!-- bg-loquesea: defibe l color de fondo -->
+            <input type="text" id="display" class="form-control mb-4 text-end fs-3" disabled>
+            <!-- form-control: Se utiliza en el input que sirve como pantalla de la calculadora. Esta clase aplica estilos predeterminados de formulario, como relleno, bordes y dimensiones ajustables, lo que le da un aspecto estandarizado y fácil de usar. -->
+            <!-- mb-3: Significa "margin-bottom 3", es decir, añade un margen inferior de un tamaño de 1rem al elemento. Se usa en el input de la pantalla para separar visualmente el campo de los botones -->
+            <!-- text-end: Alinea el texto hacia la derecha dentro del elemento. Esto hace que los números ingresados en la pantalla de la calculadora se alineen a la derecha, simulando el comportamiento de las calculadoras reales. -->
+            <div class="row">
+                <!-- row: Define una fila dentro del sistema de cuadrícula de Bootstrap. Se utiliza para organizar los botones de la calculadora en filas. -->
+                <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="anadirValor('7')">7</button></div>
+                <!-- col-3: Define una columna que ocupa 3 de las 12 unidades disponibles en el sistema de cuadrícula de Bootstrap. Esto hace que haya 4 columnas por fila, distribuyendo uniformemente los botones de la calculadora -->
+                <!-- btn: Es la clase base de Bootstrap para un botón. Aplica estilos predeterminados como relleno, borde y tamaño de fuente. -->
+                <!-- btn-secondary, btn-warning, btn-danger, btn-success: Estas clases aplican diferentes estilos de color a los botones: -->
+                <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="anadirValor('8')">8</button></div>
+                <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="anadirValor('9')">9</button></div>
+                <div class="col-3"><button class="btn btn-light btn-operador" onclick="anadirValor('/')">/</button></div>
+            </div>
+            <div class="row"> 
+                <!-- row: Define una fila dentro del sistema de cuadrícula de Bootstrap. Se utiliza para organizar los botones de la calculadora en filas. -->
+                <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="anadirValor('4')">4</button></div>
+                <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="anadirValor('5')">5</button></div>
+                <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="anadirValor('6')">6</button></div>
+                <div class="col-3"><button class="btn btn-light btn-operador" onclick="anadirValor('*')">*</button></div>
+            </div>
+            <div class="row">
+                <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="anadirValor('1')">1</button></div>
+                <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="anadirValor('2')">2</button></div>
+                <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="anadirValor('3')">3</button></div>
+                <div class="col-3"><button class="btn btn-light btn-operador" onclick="anadirValor('-')">-</button></div>
+            </div>
+            <div class="row">
+                <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="anadirValor('0')">0</button></div>
+                <div class="col-3"><button class="btn btn-secondary btn-operador" onclick="anadirValor('.')">.</button></div>
+                <div class="col-3"><button class="btn btn-danger btn-calculator" onclick="borrarDisplay()">C</button></div>
+                <div class="col-3"><button class="btn btn-light btn-operador" onclick="anadirValor('+')">+</button></div>
+            </div>
+            <div class="row mt-3">
+                <!-- mt-3: Esta es una clase de utilidad que significa "margin-top 3". Aplica un margen superior al elemento con un tamaño de 1rem (en la escala de Bootstrap). -->
+                <div class="col-12 d-flex justify-content-center">
+                    <!-- d-flex: Hace que el contenedor se comporte como un contenedor flexbox, lo que permite controlar la alineación y distribución de su contenido. -->
+                    <!-- justify-content-center: Se utiliza junto con d-flex para centrar el contenido horizontalmente dentro del contenedor. -->
+                    <!-- w-50: Establece el ancho del botón al 50% del contenedor padre. -->
+                    <button class="btn btn-success w-50 btn-operador" onclick="calcular()">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="js/app.js"></script>
+</body>
+</html>
