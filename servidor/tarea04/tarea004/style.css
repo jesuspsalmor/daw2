@@ -1,0 +1,63 @@
+div{
+    background-color: black;
+    color: aliceblue;
+    float: left;
+    width: 30%;
+    height: 20%;
+    margin: 1%;
+    align-items: center;
+    position: relative;
+    margin-bottom: 15%;
+}
+p{
+    background-color: brown;
+    padding: 2%;
+    text-align: center;
+}
+section{
+    align-content: center;
+    background-color:black;
+    position: absolute;
+    left:35%;
+    width: 30%;
+
+    
+}
+*{
+    background-color: black;
+}
+.ejer4 p{
+    margin: 0;
+    width: max-content;
+    text-align: center;
+    background-color: black;
+    position: relative;
+    left: 0;
+   
+}
+.ejer4{
+    left: 0;
+}
+.ejer5{
+   width: 100%;
+   left: 0;
+   color: aliceblue;
+    align-items: center;
+}
+input{
+color: aliceblue;
+background-color: blue;
+}
+.ejer5 p{
+    background-color: black;
+    left: 0;
+    text-align: start;
+    align-items: start;
+}
+button{
+    background-color: blue;
+    margin: 10px;
+    
+}
+
+

@@ -1,0 +1,29 @@
+p{
+    font-family: sans-serif;
+    text-decoration: underline;
+    text-indent: 5%;
+    margin-top: 0%;
+}
+span{
+    font-style: italic;
+}
+div{
+    float: left;
+    width: 20%;
+    height: 30vh;
+   
+    border: 2px ;
+    border-style:outset;
+   margin: 2%;
+   padding: 2%;
+   background-color: bisque;
+}
+body{
+    text-align: center;
+    background-color: blanchedalmond;
+}
+li{
+    display: inline;
+    margin: 5%;
+    font-size: large;
+}
