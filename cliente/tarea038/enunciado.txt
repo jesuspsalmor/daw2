@@ -1,0 +1,12 @@
+Utilizando la API https://restcountries.com/
+Se pide:
+Generar una página web que presente al usuario la posibilidad de elegir cualquiera de los países disponibles en la API 
+desde una lista desplegable ordenada alfabéticamente.
+El usuario podrá utilizar la lista de países con nombre en inglés o en español.
+Una vez seleccionado el país, que la web muestre información relevante del mismo (nombre oficial, habitantes, 
+bandera, mapa y otros datos que consideres importantes.
+Dejo a tu elección e imaginación (no a la de la IA) cómo debe ser la interfaz de usuario. Espero que quede bonita y 
+cómoda de utilizar. Asegúrate de que el contenido sea responsivo y se vea bien en diferentes dispositivos.
+La lista de países se obtiene desde la URL: https://restcountries.com/v3.1/all
+Si quieres información sobre los campos de datos de la API puedes obtenerla desde: 
+https://gitlab.com/restcountries/restcountries/-/blob/master/FIELDS.md
