@@ -8,12 +8,18 @@
 </head>
 <body>
     <header>
-    <div class="buscador"></div>    
-    <div class="usuario"></div>
+    <div class="latienda">
+        La Tienda
+    </div>
+    <div class="usuario">
+        <?php
+        include_once("./APP/Controllers/ControllerUsuario.php");
+        ?>
+    </div>
     </header>
     <main>
         <aside class="carrito">
-
+        
         </aside>
         <article class="productos">
             
