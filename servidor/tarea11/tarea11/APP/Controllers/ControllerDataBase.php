@@ -1,22 +1,27 @@
 <?php
 
-include("Config/conexionBD.php");
+
 include("Config/conexionBDDefecto.php");
-
-$conexion = new mysqli(IP, USER, CLAVE, BD);
-
-if ($conexion->connect_error) {
-    try {
-        $conexion = new mysqli(IPD, USERD, CLAVED);
-        $commands = file_get_contents("Config/tienda.sql");
-        $conexion->multi_query($commands);
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    } finally {
-        $conexion?->close();
-    }
-} else {
+mysqli_report(MYSQLI_REPORT_ERROR|MYSQLI_REPORT_STRICT);
+try{
+    $conexion= new mysqli(IPD,USERD,CLAVED,BDD);
     $conexion->close();
+}catch(Exception $e){
+    try {
+        $conexion=new mysqli(IPD,USERD,CLAVED);
+        $commands=file_get_contents("Config/tiendaServ.sql");
+    
+        
+        $conexion->multi_query($commands);
+        $conexion->close();
+    
+    } catch (\Throwable $th) {
+        echo $th;
+    }
 }
+
+
+
+    
 ?>
 

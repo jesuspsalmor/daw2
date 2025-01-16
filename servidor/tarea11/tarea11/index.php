@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./Public/styles.css">
-    
+    <?php
+    include("./APP/Controllers/ControllerDataBase.php");
+    ?>
 </head>
 <body>
     <header>
@@ -19,9 +21,7 @@
     </div>
     </header>
     <main>
-    <?php
-    include("./APP/Controllers/ControllerDataBase.php");
-    ?>
+   
         <aside class="carrito">
         
         </aside>

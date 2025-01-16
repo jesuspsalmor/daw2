@@ -12,8 +12,8 @@
         // include_once("./../../Views/BotonUsusario.php");
     }else{
         echo "sesion no iniciada";
-       include_once("Views/botonInicioSesion.php");
-      
+       include_once("Views/usuario/botonInicioSesion.php");
     }
+    
    
    ?>
