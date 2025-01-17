@@ -1,5 +1,5 @@
 
-<form action="APP/Controllers/ControllerUsuario" method="post" name="formRegistro">
+<form action="../../APP/Controllers/ControllerUsuario.php" method="post" name="formRegistro">
   <legend> <p>datos Personales</p>
   
     <label for="nombreUsuario" name="labelnombreUsuario" id="labelnombreUsuario">Nombre de usuario</label>
@@ -19,6 +19,6 @@
   <input type="password" name="contrasena2" id="contrasena2"> 
   </legend> 
 
-  <button type="submit" name="accion" value="infoRegistro"></button>
+  <button type="submit" name="accion" value="infoRegistro">Crear Cuenta</button>
 
 </form>

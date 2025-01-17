@@ -1,13 +1,14 @@
-<form action="APP/Controllers/ControllerUsuario" method="post">
+
+<form  method="POST">
     <label for="nombreUsuario" name="labelnombreUsuario" id="labelnombreUsuario">Nombre de usuario:</label>
     <input type="text" name="nombreUsuario" id="nombreUsuario">
 
-    <label for="contrasena1" name="contrasena1" id="labelContrasena">Introduca contraseña</label>
-    <input type="password" name="contrasena1" id="contrasena1">
+    <label for="contrasena" name="contrasena" id="labelContrasena">Introduca contraseña</label>
+    <input type="password" name="contrasena" id="contrasena">
 
     <button type="submit" name="accion" value="iniciarSesion">Iniciar Sesion</button>
 </form>
 
-<form action="APP/Controllers/ControllerUsuario" method="post">
-<button type="submit" name="accion" value="regitrarUsuario">crear nuevo usuario</button>
+<form action="./formRegistrarNuevoUsuario.php" method="POST">
+<button type="submit" name="accion" value="registrarUsuario">crear nuevo usuario</button>
 </form>
