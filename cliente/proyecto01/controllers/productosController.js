@@ -49,8 +49,6 @@ const eliminarProducto= async (req, res)=>{
 
 const getPById= async(req, res)=>{ //http://localhost:4000/productos/?id=2
     try {
-        console.log('KK');
-        
         const id = req.query.id; // Leer el ID de la query string POR query
         if (!id) {
             return res.status(400).json({ error: 'ID no proporcionado' });
@@ -67,10 +65,33 @@ const getPById= async(req, res)=>{ //http://localhost:4000/productos/?id=2
     }
 
 }
+const putDatos = async(req, res)=>{
+    const id = req.params.id;
+    const {nombre, precio} = req.body;
+    try{
+        const [result]= await db.query(
+            'UPDATE  productos SET nombre=?, precio=? WHERE id = ?',
+            [nombre,precio,id]
+         );
+          
+         res.status(200).json({
+            id:result,
+            nombre:nombre,
+            precio:precio
+         });
+
+    }catch{
+        res.status(500).json({error:'error'});
+
+
+    
+}
+}
 
 module.exports={
     getProductos,
     crearProducto,
     eliminarProducto,
-    getPById
+    getPById,
+    putDatos,
 }
