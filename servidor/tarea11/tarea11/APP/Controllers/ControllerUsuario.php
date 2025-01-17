@@ -14,6 +14,45 @@
         echo "sesion no iniciada";
        include_once("Views/usuario/botonInicioSesion.php");
     }
-    
+//     <?php
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     // Verificar si el botón con id 'botonIniciarSesion' ha sido pulsado
+//     if (isset($_POST['botonIniciarSesion'])) {
+//         // Aquí puedes realizar la acción que desees al pulsar el botón submit
+//         echo "¡El botón de iniciar sesión ha sido pulsado!";
+//     }
+// }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
-   ?>
+    $accion = isset($_POST['accion']) ? $_POST['accion'] : '';
+    echo"boton pulsado";
+   
+    switch ($accion) {
+        case 'login':
+            
+            header("Location: Views/usuario/formInicioSesion.php"); 
+            exit;
+
+        case 'infoRegistro':
+            
+            echo "¡El formulario de registro ha sido enviado!";
+            break;
+            case 'registro':
+            
+            echo "¡El formulario de registro ha sido enviado!";
+            break;
+        
+        default:
+                echo "error";
+            break;
+    }
+}
+?>
+
+
+
+
+
+   
+

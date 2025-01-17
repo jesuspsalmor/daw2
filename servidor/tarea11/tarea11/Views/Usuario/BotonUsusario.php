@@ -1,4 +1,4 @@
 
-    <form action="../APP/Controllers/ControllerUsuario.php" method="post">
-    <button type="submit" id="botonIniciarSesion" class="login">Login</button>
+    <form action="../APP/Controllers/ControllerUsuario.php" name="botonInfoUsuario" method="post">
+    <button type="submit" id="botonInfoUsuario" name="accion" value="infoUsuario" >usuario</button>
     </form>
