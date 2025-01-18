@@ -38,15 +38,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            
         break;
         case 'infoRegistro':
-                //iniciar sesion con datos 
-                //validar datos
-                //si error devolver a 
-            header("Location: ../../Views/Usuario/formrRegistrarUsuario.php");
-                //si no error
-                
-            header("Location:../../../../index.php");
+            case 'infoRegistro':
+                // Iniciar sesión con datos
+                // Validar datos
+                $errores = [];
+        
+                $nombreUsuario = $_POST['nombreUsuario'];
+                $email = $_POST['email'];
+                $contraseña1 = $_POST['contrasena1'];
+                $contraseña2 = $_POST['contrasena2'];
+        
+                $errores['nombreUsuario'] = validarNombreUsuario($nombreUsuario);
+                $errores['email'] = validarEmail($email);
+                $errores['contraseña'] = validarContraseña($contraseña1, $contraseña2);
+                $errores['contraseñaCompleta'] = validarContraseñaCompleta($contraseña1);
+        
+                if (empty($errores)) {
+                   
+                        $contraseñaHash = password_hash($contraseña1, PASSWORD_DEFAULT);
 
+                    header("Location: ../../../../index.php");
+                } else {
+                    // Devolver los errores al formulario
+                    header("Location: ../../Views/Usuario/formRegistrarUsuario.php");
+                    exit;
+                }
                 break;
+                
         default:
                 echo "error";
             break;
@@ -59,4 +77,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
    
+
+switch ($_POST['accion']) {
+    
+    // Otros casos
+}
 
