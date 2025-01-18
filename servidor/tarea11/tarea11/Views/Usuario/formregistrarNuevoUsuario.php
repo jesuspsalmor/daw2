@@ -8,8 +8,8 @@
     <label for="email" name="labelemail" id="labelemail" >Correo eelectronico</label>
     <input type="text" name="email" id="email">  
 
-    <label for="fechaNacimiento" name=""></label>
-    <input type="date" name="fechaNacimiento" id="">
+    <label for="fechaNacimiento" name="fechaNacimiento">Fecha de nacimiento</label>
+    <input type="date" name="fechaNacimiento" id="fechaNacimiento">
   </legend>
 
   <legend><p>Contraseña mínimo 8 caracteres y al final una mayúscula, una minúscula y un numero </p>
