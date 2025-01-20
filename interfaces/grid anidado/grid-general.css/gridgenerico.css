@@ -1,0 +1,50 @@
+body{
+        display: grid;
+    height: 100vh;
+    grid-template-areas:  
+                            "cabecera cabecera"
+                            "main  lateral" 
+                            "footer footer";
+    grid-template-columns: 1fr 200px;
+    grid-template-rows: 1fr 80% 1fr; 
+    gap: 10px;
+                        
+}
+.cabecera{
+    grid-area: cabecera;
+    display: grid;
+    grid-template-areas: "titulo"
+                        "menu";
+    
+   
+     gap: 10px;
+    
+}
+.titulo1{
+    grid-area: titulo;
+    background-color: greenyellow;
+    align-items: center;
+    justify-items: center;
+
+}
+.menu{
+    grid-area: menu;
+    background-color: gray;
+    display: flex;
+    padding: 5px;
+    gap: 5px;
+}
+.main{
+    grid-area: main;
+    background-color: aliceblue;
+}
+.lateral{
+    grid-area: lateral;
+    background-color: lightgray;
+}
+.footer1{
+    background-color: cornsilk;
+    grid-area: footer;
+    justify-items: center;
+    align-items: center;
+}
