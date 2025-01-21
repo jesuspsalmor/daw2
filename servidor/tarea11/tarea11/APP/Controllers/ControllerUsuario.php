@@ -38,32 +38,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            
         break;
         case 'infoRegistro':
-            case 'infoRegistro':
+            
+                
+            // Validar datos
+            include( "../DAO/DAOUsuario.php");
+            include("../SA/SAUsuario/SAUsuarioValidaciones.php");
+            $errores = [];
+        
+            $nombreUsuario = $_POST['nombreUsuario'];
+            $email = $_POST['email'];
+            $contraseña1 = $_POST['contrasena1'];
+            $contraseña2 = $_POST['contrasena2'];
+        
+            $errores['nombreUsuario'] = validarNombreUsuario($nombreUsuario);
+            $errores['email'] = validarEmail($email);
+            $errores['contraseña'] = validarParContrasena($contraseña1, $contraseña2);
+            $errores['contraseñaCompleta'] = validarContrasena($contraseña1);
+            $errores['usuarioexistente']=ComprobarNombreDeUsuario($nombreUsuario);
+                ///jesuspabLo8
+        
+            if (empty($errores)) {
                 // Iniciar sesión con datos
-                // Validar datos
-                $errores = [];
-        
-                $nombreUsuario = $_POST['nombreUsuario'];
-                $email = $_POST['email'];
-                $contraseña1 = $_POST['contrasena1'];
-                $contraseña2 = $_POST['contrasena2'];
-        
-                $errores['nombreUsuario'] = validarNombreUsuario($nombreUsuario);
-                $errores['email'] = validarEmail($email);
-                $errores['contraseña'] = validarContraseña($contraseña1, $contraseña2);
-                $errores['contraseñaCompleta'] = validarContraseñaCompleta($contraseña1);
-        
-                if (empty($errores)) {
-                   
-                        $contraseñaHash = password_hash($contraseña1, PASSWORD_DEFAULT);
 
-                    header("Location: ../../../../index.php");
-                } else {
-                    // Devolver los errores al formulario
-                    header("Location: ../../Views/Usuario/formRegistrarUsuario.php");
-                    exit;
-                }
-                break;
+                //$contraseñaHash = password_hash($contraseña1, PASSWORD_DEFAULT);
+
+                header("Location:../../index.php");
+                  
+                    
+            } else {
+                // Devolver los errores al formulario
+                header("Location:../../index.php");
+                    
+            }
+            break;
                 
         default:
                 echo "error";
@@ -78,8 +85,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
    
 
-switch ($_POST['accion']) {
-    
-    // Otros casos
-}
+
 

@@ -28,7 +28,7 @@ function cargarBBDD(){
     } catch(Exception $e){
         echo $e->getMessage();
     }finally{
-        $conexion?->close();
+        $conexion->close();
     }
 }
 function createCliente($cliente){

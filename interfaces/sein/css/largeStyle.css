@@ -1,0 +1,10 @@
+ header{
+    height: 10%;
+    display: grid;
+    grid-template-areas: "logo buscador usuario carrito"
+                            "menu menu menu Contacto" ;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+ }
+ 
