@@ -51,7 +51,7 @@ const getPById= async(req, res)=>{ //http://localhost:4000/productos/?id=2
     try {
         console.log('KK');
         
-        const id = req.query.id; // Leer el ID de la query string POR query
+        const id = req.query.id; 
         if (!id) {
             return res.status(400).json({ error: 'ID no proporcionado' });
         }
