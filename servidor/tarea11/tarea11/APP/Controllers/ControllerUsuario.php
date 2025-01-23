@@ -23,9 +23,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         case 'iniciarSesion':
             include("../SA/SAUsuario/SAUsuarioValidaciones.php");
+            include("../../Models/Usuario.php");
+            
             $nombre = $_POST['nombreUsuario'];
             $contrasena = $_POST['contrasena'];
-            
+            $contraseñaHash = password_hash($contraseña, PASSWORD_DEFAULT);
+            $nuevoUsuario=new Usuario;
+            $nuevoUsuario= comprobarCredenciales($nombreUsuario,$contraseñaHash);
+           
+           
+
             // comprobar credenciales
 
             break;
@@ -51,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $contraseña2 = $_POST['contraseña2']; // Con tilde
             $fechaNacimiento = $_POST['fechaNacimiento'];
             
-
+            /// cambiar errores por sesision
             $errores['nombreUsuario'] = validarNombreUsuario($nombreUsuario);
             $errores['email'] = validarEmail($email);
             $errores['contraseña'] = validarParContrasena($contraseña1, $contraseña2);

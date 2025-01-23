@@ -1,6 +1,25 @@
 <?php
 include("Config/conexionBDDefecto.php");
+include("../../Models/Usuario.php");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+function comprobarCredenciales($nombreUsuario,$contraseña){
+    try {
+        $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
+        $consulta = $conexion->prepare("SELECT id, usuario,email,fecha_nacimiento,rol_id FROM usuarios WHERE usuario = ?AND contraseña=?");
+        $consulta->bind_param("ss", $nombreUsuario, $contraseña);
+        $consulta->execute();
+        $resultado = $consulta->get_result();
+        $usuario = $resultado->fetch_assoc() ;
+        $nuevousuario=new Usuario($usuario['id'],$usuario['usuario'],$usuario['email'],$usuario['fecha_nacimiento'],$usuario['rol_id']);
+        return $nuevousuario;
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    } finally {
+        $conexion->close();
+    }
+}
+
 
 function ComprobarNombreDeUsuario($nombreUsuario) {
     try {
