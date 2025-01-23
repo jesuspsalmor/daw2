@@ -29,6 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // comprobar credenciales
 
             break;
+            case 'infoUsuario':
+                header("Location: ../../Views/Usuario/infoUsuario.php"); 
+                break;
 
         case 'registrarUsuario':
             
