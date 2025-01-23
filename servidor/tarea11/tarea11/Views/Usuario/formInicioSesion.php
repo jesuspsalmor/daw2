@@ -9,6 +9,6 @@
     <button type="submit" name="accion" value="iniciarSesion">Iniciar Sesion</button>
 </form>
 
-<form action="./formRegistrarNuevoUsuario.php" method="POST">
+<form action="../../APP/Controllers/ControllerUsuario.php" method="POST">
 <button type="submit" name="accion" value="registrarUsuario">crear nuevo usuario</button>
 </form>
