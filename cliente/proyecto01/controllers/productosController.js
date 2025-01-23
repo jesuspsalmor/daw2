@@ -53,7 +53,8 @@ const eliminarProducto = async (req, res) => {
 
 const getPById = async (req, res) => {
     try {
-        const id = req.query.id; 
+        const {id} = req.params; 
+        
         if (!id) {
             return res.status(400).json({ error: 'ID no proporcionado' });
         }
