@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./Public/styles.css">
     <?php
     include("./APP/Controllers/ControllerDataBase.php");
+    
     ?>
 </head>
 <body>

@@ -24,12 +24,13 @@ function validarParContrasena($contraseña1, $contraseña2) {
 }
 
 function validarContrasena($contraseña) {
-    if (preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*[A-Z][a-z][\d]$/', $contraseña)) {
+    if (preg_match('/^.{5,}[a-z][A-Z]\d$/', $contraseña)) {
         return "";
     } else {
         return "La contraseña debe tener al menos 8 caracteres, terminar con una mayúscula, una minúscula y un número.";
     }
 }
+
 
 
 function validarFechaNacimiento($fecha) {

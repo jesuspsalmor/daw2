@@ -16,6 +16,20 @@ function ComprobarNombreDeUsuario($nombreUsuario) {
     }
     return $resultado->num_rows > 0;
 }
+function ComprobarEmail($email) {
+    try {
+        $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
+        $consulta = $conexion->prepare("SELECT usuario FROM usuarios WHERE email = ?");
+        $consulta->bind_param("s", $email);
+        $consulta->execute();
+        $resultado = $consulta->get_result();
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    } finally {
+        $conexion->close();
+    }
+    return $resultado->num_rows > 0;
+}
 
 function leerUsuario($usuarioId) {
     try {
