@@ -22,11 +22,17 @@ class Validaciones {
     }
 
     public static function validarContrasena($contraseña) {
-        if (preg_match('/^.{8,}[a-z][A-Z]\d$/', $contraseña)) {
+        // Comprobar la longitud de la contraseña
+        if (strlen($contraseña) < 8) {
+            return "La longitud de la contraseña debe ser igual o mayor a 8 caracteres.";
+        }
+        // Comprobar si termina en una minúscula, una mayúscula y un número
+        if (preg_match('/[A-Z][a-z]\d$/', $contraseña)) {
             return "";
         }
-        return "Contraseña mínimo 8 caracteres y al final una mayúscula, una minúscula y un numero";
+        return "La contraseña debe terminar con una minúscula, una mayúscula y un número.";
     }
+    
 
     public static function validarFechaNacimiento($fecha) {
         $fechaActual = date("Y-m-d");

@@ -9,25 +9,25 @@ class DAOUsuario {
     public static function comprobarCredenciales($nombreUsuario, $contraseña) {
         try {
             $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
-            $consulta = $conexion->prepare("SELECT id, usuario, email, fecha_nacimiento, rol_id FROM usuarios WHERE usuario = ? AND contraseña = ?");
-            $consulta->bind_param("ss", $nombreUsuario, $contraseña);
+            $consulta = $conexion->prepare("SELECT id, usuario, email, fecha_nacimiento, rol_id, contraseña FROM usuarios WHERE usuario = ?");
+            $consulta->bind_param("s", $nombreUsuario);
             $consulta->execute();
             $resultado = $consulta->get_result();
             $usuario = $resultado->fetch_assoc();
     
-            if ($usuario) {
-                $nuevousuario = new Usuario($usuario['id'], $usuario['usuario'], $usuario['email'], $usuario['fecha_nacimiento'], $usuario['rol_id']);
-                return $nuevousuario;
+            if ($usuario && password_verify($contraseña, $usuario['contraseña'])) {
+                $nuevoUsuario = new Usuario($usuario['id'], $usuario['usuario'], $usuario['email'], $usuario['fecha_nacimiento'], $usuario['rol_id']);
+                return $nuevoUsuario;
             } else {
                 return null;
             }
-    
         } catch (Exception $e) {
-                echo $e->getMessage();
+            echo $e->getMessage();
         } finally {
-                $conexion->close();
+            $conexion->close();
         }
     }
+    
         
       
     
@@ -124,6 +124,46 @@ class DAOUsuario {
         }
         return $resultado;
     }
+    public static function actualizarEmail($usuarioId, $nuevoEmail) {
+        try {
+            $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
+            $consulta = $conexion->prepare("UPDATE usuarios SET email = ? WHERE id = ?");
+            $consulta->bind_param("si", $nuevoEmail, $usuarioId);
+            $resultado = $consulta->execute();
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        } finally {
+            $conexion->close();
+        }
+        return $resultado;
+    }
+    public static function actualizarFechaNacimiento($usuarioId, $nuevaFechaNacimiento) {
+        try {
+            $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
+            $consulta = $conexion->prepare("UPDATE usuarios SET fecha_nacimiento = ? WHERE id = ?");
+            $consulta->bind_param("si", $nuevaFechaNacimiento, $usuarioId);
+            $resultado = $consulta->execute();
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        } finally {
+            $conexion->close();
+        }
+        return $resultado;
+    }
+    public static function actualizarContrasena($usuarioId, $nuevaContrasenaHash) {
+        try {
+            $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
+            $consulta = $conexion->prepare("UPDATE usuarios SET contraseña = ? WHERE id = ?");
+            $consulta->bind_param("si", $nuevaContrasenaHash, $usuarioId);
+            $resultado = $consulta->execute();
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        } finally {
+            $conexion->close();
+        }
+        return $resultado;
+    }
+       
 
     public static function borrarUsuario($usuarioId) {
         try {
@@ -138,5 +178,7 @@ class DAOUsuario {
         }
         return $resultado;
     }
+    
+    
 }
 ?>
