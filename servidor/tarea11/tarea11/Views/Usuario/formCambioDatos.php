@@ -26,8 +26,8 @@ $errores = isset($_SESSION['errores']) ? $_SESSION['errores'] : [];
 </form>
 
 <!-- Formulario de cambio de contraseña -->
-<form method="POST" action="./cambiarContrasena.php">
-    <button type="submit" name="accion" value="guardarCambioContraseña">Cambiar Contraseña</button>
+<form method="POST" action="../../APP/Controllers/ControllerUsuario.php">
+    <button type="submit" name="accion" value="CambioContraseña">Cambiar Contraseña</button>
 </form>
 
 <?php

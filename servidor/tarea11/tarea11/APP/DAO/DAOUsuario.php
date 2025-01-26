@@ -150,7 +150,7 @@ class DAOUsuario {
         }
         return $resultado;
     }
-    public static function actualizarContrasena($usuarioId, $nuevaContrasenaHash) {
+    public static function actualizarContraseña($usuarioId, $nuevaContrasenaHash) {
         try {
             $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
             $consulta = $conexion->prepare("UPDATE usuarios SET contraseña = ? WHERE id = ?");

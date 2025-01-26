@@ -15,7 +15,7 @@ class Usuario {
         $this->rol_id = $rol_id;
     }
 
-    // Métodos para obtener y establecer propiedades
+    
     public function getId() {
         return $this->id;
     }

@@ -47,6 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
             } else {
                 echo "Nombre de usuario o contraseña incorrectos.";
+                header("Location: ../../Views/Usuario/formInicioSesion.php"); 
+                break;
             }
             break;
             case 'infoUsuario':
@@ -60,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             
         case 'infoRegistro':
-            //usuario jesusPrueba contraseña  secursAr1
+            //usuario jesusPrueba2 contraseña  secursAr1 jesuspabloSm2
             include_once("../../Models/Usuario.php");
             include_once("../DAO/DAOUsuario.php");
             include_once("../../APP/SA/SAUsuario/SAUsuarioValidaciones.php");
@@ -146,9 +148,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 } else {
                     $_SESSION['errores'] = $errores;
                     $_SESSION['mensaje'] = "Hay errores en los datos ingresados.";
+                    header('Location:../../Views/Usuario/formCambioDatos.php.');
                 }
             
-                header('Location: ruta/al/formulario.php');
+                
                 exit();
             break;
             
@@ -164,9 +167,66 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../../index.php");  
             exit(); 
         
-        case 'guardarCambioContraseña':
-            Validaciones::validarTodo($nombreUsuario, $email, $contraseña1, $contraseña2, $fechaNacimiento);
+        case 'CambioContraseña':
+            header("Location:../../Views/Usuario/formCambioContraseña.php");
             break;
+            case 'guardarCambiosContraseña':
+                include_once("../DAO/DAOUsuario.php");
+                include_once("../../APP/SA/SAUsuario/SAUsuarioValidaciones.php");
+                $antiguaContraseña = $_POST['antigua_contraseña'];
+                $nuevaContraseña = $_POST['nueva_contraseña'];
+                $confirmarNuevaContraseña = $_POST['confirmar_nueva_contraseña'];
+                $nombreUsuario = $_SESSION['nombreUsuario']; // Suponer que el nombre de usuario está guardado en la sesión
+                $errores = [];
+            
+                // Verificar que se han llenado todos los campos
+                if (empty($antiguaContraseña) || empty($nuevaContraseña) || empty($confirmarNuevaContraseña)) {
+                    $errores['campos_vacios'] = 'Todos los campos son obligatorios.';
+                }
+                
+                // Verificar que la antigua contraseña sea correcta sin hashearla nuevamente
+                $credencialesValidas = DAOUsuario::comprobarCredenciales($nombreUsuario, $antiguaContraseña);
+                if (!$credencialesValidas) {
+                    $errores['antigua_contraseña'] = 'La antigua contraseña no es correcta.';
+                }
+            
+                // Validar que las nuevas contraseñas coincidan
+                $validacionParContraseña = Validaciones::validarParContrasena($nuevaContraseña, $confirmarNuevaContraseña);
+                if ($validacionParContraseña !== "") {
+                    $errores['par_contraseña'] = $validacionParContraseña;
+                }
+            
+                // Validar la nueva contraseña
+                $validacionNuevaContraseña = Validaciones::validarContrasena($nuevaContraseña);
+                if ($validacionNuevaContraseña !== "") {
+                    $errores['nueva_contraseña'] = $validacionNuevaContraseña;
+                }
+            
+                if (empty($errores)) {
+                    // Hashear la nueva contraseña
+                    $hashedContrasena = password_hash($nuevaContraseña, PASSWORD_DEFAULT);
+            
+                    // Actualizar la contraseña en la base de datos
+                    if (DAOUsuario::actualizarContraseña($nombreUsuario, $hashedContrasena)) {
+                        // Redirigir con mensaje de éxito
+                        $_SESSION['mensaje'] = 'Contraseña actualizada exitosamente.';
+                        header("Location: ../../index.php");
+                        exit;
+                    } else {
+                        $errores['update_failed'] = 'Hubo un problema al actualizar la contraseña. Inténtelo de nuevo.';
+                    }
+                }
+            
+                // Si hay errores, guardarlos en la sesión y redirigir de nuevo al formulario con mensajes de error
+                $_SESSION['errores'] = $errores;
+                header("Location:../../Views/Usuario/formCambioContraseña.php");
+                exit;
+                break;
+            
+        
+         
+            
+              
         default:
             echo "error";
             break;
