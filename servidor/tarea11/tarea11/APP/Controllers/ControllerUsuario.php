@@ -5,7 +5,10 @@ session_start();
 
 if (isset($_SESSION['nombreUsuario'])) {
     $usuario = $_SESSION['nombreUsuario'];
+    $rol_id=$_SESSION['rol_id'];
     echo "sesioniniciada";
+    echo $rol_id;
+
      include_once("Views/Usuario/botonUsusario.php");
 
 } else {
@@ -63,6 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
         case 'infoRegistro':
             //usuario jesusPrueba2 contraseña  secursAr1 jesuspabloSm2
+            //admin1    amdiniSt2
+            //moderador1  moderadOr1
             include_once("../../Models/Usuario.php");
             include_once("../DAO/DAOUsuario.php");
             include_once("../../APP/SA/SAUsuario/SAUsuarioValidaciones.php");

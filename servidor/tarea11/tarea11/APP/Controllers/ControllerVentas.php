@@ -45,8 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
             break;
         
-        
-        
+      
         default:
             # code...
             break;
