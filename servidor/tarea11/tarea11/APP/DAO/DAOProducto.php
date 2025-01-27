@@ -12,22 +12,22 @@ class DAOProducto {
             $consulta = $conexion->prepare("INSERT INTO productos (nombre, descripcion, precio, stock, categoria_id) VALUES (?, ?, ?, ?, ?)");
             $consulta->bind_param("ssdii", $nombreProducto, $descripcion, $precio, $stock, $categoriaId);
             $consulta->execute();
-
-            // Obtener el ID del producto recién insertado
             $productoId = $conexion->insert_id;
-
-            // Crear un objeto Producto con el ID y los otros datos
+    
             if ($productoId) {
                 $producto = new Producto($productoId, $nombreProducto, $descripcion, $precio, $stock, $categoriaId);
             }
-
+    
         } catch (Exception $e) {
             echo $e->getMessage();
         } finally {
+            $consulta->close();
             $conexion->close();
         }
         return $producto;
     }
+    
+    
 
     public static function leerProducto($productoId) {
         $producto = null;

@@ -1,4 +1,12 @@
 <h1>Listado de Productos</h1>
+
+<div id="error-mensaje">
+    <?php if (isset($_SESSION['error_mensaje'])) : ?>
+        <p style="color: red;"><?= htmlspecialchars($_SESSION['error_mensaje']); ?></p>
+        <?php unset($_SESSION['error_mensaje']); ?>
+    <?php endif; ?>
+</div>
+
 <table>
     <tr>
         <th>ID</th>
@@ -19,7 +27,7 @@
                 <form action="./APP/Controllers/ControllerVentas.php" method="post">
                     <input type="hidden" name="producto_id" value="<?= htmlspecialchars($producto->getId()); ?>">
                     <input type="number" name="cantidad" value="1" min="1" max="<?= htmlspecialchars($producto->getStock()); ?>">
-                    <button type="submit"name="accion" value="nuevaVenta" >Comprar</button>
+                    <button type="submit" name="accion" value="nuevaVenta">Comprar</button>
                 </form>
             </td>
         </tr>
