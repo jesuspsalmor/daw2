@@ -5,27 +5,30 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 class DAOProducto {
 
-    public static function crearProducto($nombreProducto, $descripcion, $precio, $stock, $categoriaId) {
+    public static function crearProducto($nombreProducto, $descripcion, $precio, $stock = 0) {
         $producto = null;
         try {
             $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
-            $consulta = $conexion->prepare("INSERT INTO productos (nombre, descripcion, precio, stock, categoria_id) VALUES (?, ?, ?, ?, ?)");
-            $consulta->bind_param("ssdii", $nombreProducto, $descripcion, $precio, $stock, $categoriaId);
+            $consulta = $conexion->prepare("INSERT INTO productos (nombre, descripcion, precio, stock) VALUES (?, ?, ?, ?)");
+            $consulta->bind_param("ssdi", $nombreProducto, $descripcion, $precio, $stock);
             $consulta->execute();
             $productoId = $conexion->insert_id;
     
             if ($productoId) {
-                $producto = new Producto($productoId, $nombreProducto, $descripcion, $precio, $stock, $categoriaId);
+                $producto = new Producto($productoId, $nombreProducto, $descripcion, $precio, $stock);
             }
     
         } catch (Exception $e) {
             echo $e->getMessage();
         } finally {
-            $consulta->close();
+            if (isset($consulta)) {
+                $consulta->close();
+            }
             $conexion->close();
         }
         return $producto;
     }
+    
     
     
 
@@ -51,20 +54,24 @@ class DAOProducto {
     }
     
 
-    public static function actualizarProducto($productoId, $nombreProducto, $descripcion, $precio, $stock, $categoriaId) {
+    public static function actualizarProducto($productoId, $nombreProducto, $descripcion, $precio) {
         $resultado = false;
         try {
             $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
-            $consulta = $conexion->prepare("UPDATE productos SET nombre = ?, descripcion = ?, precio = ?, stock = ?, categoria_id = ? WHERE id = ?");
-            $consulta->bind_param("ssdiii", $nombreProducto, $descripcion, $precio, $stock, $categoriaId, $productoId);
+            $consulta = $conexion->prepare("UPDATE productos SET nombre = ?, descripcion = ?, precio = ? WHERE id = ?");
+            $consulta->bind_param("ssdi", $nombreProducto, $descripcion, $precio, $productoId);
             $resultado = $consulta->execute();
         } catch (Exception $e) {
             echo $e->getMessage();
         } finally {
+            if (isset($consulta)) {
+                $consulta->close();
+            }
             $conexion->close();
         }
         return $resultado;
     }
+    
     public static function actualizarStock($productoId, $cantidadVendida) {
         $resultado = false;
         try {

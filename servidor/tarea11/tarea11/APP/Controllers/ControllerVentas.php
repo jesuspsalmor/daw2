@@ -14,7 +14,8 @@ if (isset($_SESSION['nombreUsuario'])) {
             include_once("Views/Ventas/VerVentas.php");
             break;
         case "1":
-            include_once("Views/Ventas/formAñadirStockyModificarCampos.php");
+            
+            // include_once("Views/Ventas/formAñadirStockyModificarCampos.php");
             break;
         
         case '3':

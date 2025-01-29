@@ -5,7 +5,7 @@
         <?php unset($_SESSION['error_mensaje']); ?>
     <?php endif; ?>
 </div>
-
+<div class="añadirStock"></div>
 <table>
     <tr>
         <th>ID</th>

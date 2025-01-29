@@ -15,7 +15,7 @@ if (isset($_SESSION['nombreUsuario'])) {
             include_once("Views/Albaran/VerAlbaranes.php");
             break;
         case "1":
-            include_once("Views/Ventas/formAñadirStockyModificarCampos.php");
+            // include_once("Views/Ventas/formAñadirStockyModificarCampos.php");
             break;
         case "3":
             // Add any specific actions or views for role 3
