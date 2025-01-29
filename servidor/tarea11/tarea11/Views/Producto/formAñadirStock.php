@@ -1,4 +1,5 @@
 <div id="error-mensaje">
+    
     <?php if (isset($_SESSION['error_mensaje'])) : ?>
         <p style="color: red;"><?= htmlspecialchars($_SESSION['error_mensaje']); ?></p>
         <?php unset($_SESSION['error_mensaje']); ?>
@@ -22,7 +23,7 @@
             <td><?= htmlspecialchars($producto->getPrecio()); ?></td>
             <td><?= htmlspecialchars($producto->getStock()); ?></td>
             <td>
-                <form action="./APP/Controllers/ControllerStock.php" method="post">
+                <form action="./APP/Controllers/ControllerAlbaran.php" method="post">
                     <input type="hidden" name="producto_id" value="<?= htmlspecialchars($producto->getId()); ?>">
                     <input type="number" name="cantidad" value="1" min="1">
                     <button type="submit" name="accion" value="AñadirStock">Añadir Stock</button>

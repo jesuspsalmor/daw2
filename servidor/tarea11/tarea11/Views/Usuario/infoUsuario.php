@@ -1,5 +1,17 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../Public/styles.css">
+</head>
+<body>
+    
+
+<div class="contenedor"><?php
 session_start(); // Asegúrate de iniciar la sesión
+
 include_once("../botonesNavegacion/botonVolverIndex.php");
 
 if(isset($_SESSION['nombreUsuario'])) {
@@ -20,4 +32,6 @@ if(isset($_SESSION['nombreUsuario'])) {
     </form>
 <form action="../../APP/Controllers/ControllerUsuario.php" name="botonInfoUsuario" method="post">
     <button type="submit" id="botonInfoUsuario" name="accion" value="cerrarSesion" >Cerrar Sesion</button>
-    </form>
+    </form></div>
+    </body>
+</html>

@@ -1,15 +1,15 @@
 <?php
-include_once("../../Models/Albaran.php");
+include_once("Models/Albaran.php");
 
 class DAOAlbaran {
 
     
-    public static function crearAlbaran($fechaAlbaran, $codProducto, $cantidad, $usuarioId) {
+    public static function crearAlbaran( $codProducto, $cantidad, $usuarioId) {
         $resultado = false;
         try {
             $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
-            $consulta = $conexion->prepare("INSERT INTO albaranes (fechaAlbaran, codProducto, cantidad, usuarioId) VALUES (?, ?, ?, ?)");
-            $consulta->bind_param("siii", $fechaAlbaran, $codProducto, $cantidad, $usuarioId);
+            $consulta = $conexion->prepare("INSERT INTO albaranes ( producto_id, cantidad, usuario_id) VALUES ( ?, ?, ?)");
+            $consulta->bind_param("iii",  $codProducto, $cantidad, $usuarioId);
             $resultado = $consulta->execute();
         } catch (Exception $e) {
             echo $e->getMessage();
@@ -18,6 +18,9 @@ class DAOAlbaran {
         }
         return $resultado;
     }
+    
+    
+    
 
     public static function leerAlbaran($id) {
         $albaran = null;
@@ -46,7 +49,8 @@ class DAOAlbaran {
             $consulta = "SELECT * FROM albaranes";
             $resultado = $conexion->query($consulta);
             while ($fila = $resultado->fetch_assoc()) {
-                $albaran = new Albaran($fila['id'], $fila['fechaAlbaran'], $fila['codProducto'], $fila['cantidad'], $fila['usuarioId']);
+               
+                $albaran = new Albaran($fila['id'], $fila['fecha_albaran'], $fila['producto_id'], $fila['cantidad'], $fila['usuario_id']);
                 $albaranes[] = $albaran;
             }
         } catch (Exception $e) {

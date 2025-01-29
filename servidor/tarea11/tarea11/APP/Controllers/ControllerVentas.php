@@ -1,6 +1,32 @@
 
 <?php
-session_start();
+
+
+if (isset($_SESSION['nombreUsuario'])) {
+    include_once("./Models/Ventas.php");
+
+    include_once("./APP/DAO/DAOVentas.php");
+
+    $ventas = DAOVentas::obtenerTodasLasVentas();
+
+    switch ($_SESSION['rol_id']) {
+        case "2":
+            include_once("Views/Ventas/VerVentas.php");
+            break;
+        case "1":
+            include_once("Views/Ventas/formAñadirStockyModificarCampos.php");
+            break;
+        
+        case '3':
+            
+            break;
+        default:
+            echo "Rol no identificado.";
+            break;
+    }
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $accion = isset($_POST['accion']) ? $_POST['accion'] : '';
     switch ($accion) {
@@ -21,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($producto->getStock() >= $cantidad) {
                     $precioTotal = $producto->getPrecio() * $cantidad;
         
-                    $venta = DAOVenta::crearVenta($usuarioId, $productoId, $cantidad, $precioTotal);
+                    $venta = DAOVentas::crearVenta($usuarioId, $productoId, $cantidad, $precioTotal);
         
                     if ($venta) {
                         // Reducir el stock del producto

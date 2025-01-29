@@ -1,9 +1,12 @@
 <?php
 include_once("Config/conexionBDDefecto.php");
-include_once("../../Models/Ventas.php");
+
+require_once ("Models/Ventas.php");
+
+
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-class DAOVenta {
+class DAOVentas {
 
     public static function crearVenta($usuarioId, $productoId, $cantidad, $precioTotal) {
         $venta = null;

@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./Public/styles.css">
+    
     <?php
     include("./APP/Controllers/ControllerDataBase.php");
-    
     ?>
 </head>
 <body>
     <header>
     <div class="latienda">
-        La Tienda
+        <h1>La Tienda</h1>
     </div>
     <div class="usuario">
         <?php
@@ -22,13 +22,23 @@
     </div>
     </header>
     <main>
-   
-        <aside class="carrito">
-        
-        </aside>
+
         <article class="productos">
         <?php
+        
         include_once("./APP/Controllers/ControllerProducto.php");
+        ?> 
+        </article>
+        <article class="ventas">
+        <?php
+       
+        include_once("./APP/Controllers/ControllerVentas.php");
+        ?> 
+        </article>
+        <article class="ventas">
+        <?php
+
+        include_once("./APP/Controllers/ControllerAlbaran.php");
         ?> 
         </article>
     </main>

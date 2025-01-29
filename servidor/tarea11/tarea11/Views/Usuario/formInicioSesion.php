@@ -1,6 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../Public/styles.css">
+</head>
+<body>
+<div class="contenedor">
 <?php
 include_once("../botonesNavegacion/botonVolverIndex.php");
 ?>
+
 <form action="../../APP/Controllers/ControllerUsuario.php" method="POST">
     <label for="nombreUsuario" name="labelnombreUsuario" id="labelnombreUsuario">Nombre de usuario:</label>
     <input type="text" name="nombreUsuario" id="nombreUsuario">
@@ -16,3 +27,6 @@ include_once("../botonesNavegacion/botonVolverIndex.php");
     <button type="submit" name="accion" value="registrarUsuario">Crear nuevo usuario</button>
 </form>
 
+</div>
+</body>
+</html>

@@ -80,6 +80,21 @@ class DAOProducto {
         return $resultado;
     }
     
+    public static function aumentarStock($productoId, $cantidadAñadida) {
+        $resultado = false;
+        try {
+            $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
+            $consulta = $conexion->prepare("UPDATE productos SET stock = stock + ? WHERE id = ?");
+            $consulta->bind_param("ii", $cantidadAñadida, $productoId);
+            $resultado = $consulta->execute();
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        } finally {
+            $conexion->close();
+        }
+        return $resultado;
+    }
+    
 
     public static function borrarProducto($productoId) {
         $resultado = false;

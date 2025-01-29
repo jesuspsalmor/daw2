@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+}
+header{
+    display: flex;
+   flex-direction: row;
+   justify-items: center;
+   align-items: center;
+   justify-content: center;
+   background-color: bisque;
+}
+.usuario{
+background-color: aqua;
+margin-left: 50vh;
+display: flex;
+align-items: center;
+justify-items: center;
+justify-content: center;
+}
+main{
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor{
+    
+    background-color: aqua;
+    height: 100vh;
+    display: block;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+}
+form{
+    border: 1px solid black;
+    display:flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+
+}
+input{
+    margin: 10px;
+}
