@@ -6,8 +6,18 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../Public/styles.css">
 </head>
+<header>
+    <div class="latienda">
+        <h1>La Tienda</h1>
+    </div>
+    <div class="usuario">
+    <?php
+include_once("../botonesNavegacion/botonVolverIndex.php");
+?>
+    </div>
+    </header>
 <body>
- <div class="contenedor">
+ <div class="login">
 <?php
 session_start();
 

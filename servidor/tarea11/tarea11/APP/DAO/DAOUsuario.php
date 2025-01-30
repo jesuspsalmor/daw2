@@ -80,7 +80,7 @@ class DAOUsuario {
     }
 
 
-    public static function registrarUsuario($nombreUsuario, $email, $contraseñaHash, $fechaNacimiento, $rolId = 2) {
+    public static function registrarUsuario($nombreUsuario, $email, $contraseñaHash, $fechaNacimiento, $rolId = 3) {
         $usuario = null;
         try {
             // Validar y formatear la fecha

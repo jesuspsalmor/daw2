@@ -15,7 +15,7 @@ if (isset($_SESSION['nombreUsuario'])) {
             break;
         case "1":
             
-            // include_once("Views/Ventas/formAñadirStockyModificarCampos.php");
+            include_once("Views/Ventas/modificarVentas.php");
             break;
         
         case '3':
@@ -29,14 +29,15 @@ if (isset($_SESSION['nombreUsuario'])) {
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include_once("../DAO/DAOVentas.php");
+    include_once("../DAO/DAOProducto.php");
+    include_once("../../Models/Producto.php");
+    include_once("../../Models/Ventas.php");
+            include_once("../../Models/Usuario.php");
     $accion = isset($_POST['accion']) ? $_POST['accion'] : '';
     switch ($accion) {
         case 'nuevaVenta':
-            include_once("../DAO/DAOVentas.php");
-            include_once("../DAO/DAOProducto.php");
-            include_once("../../Models/Producto.php");
-            include_once("../../Models/Ventas.php");
-            include_once("../../Models/Usuario.php");
+            
             session_start(); // Asegúrate de iniciar la sesión
             $usuarioId = $_SESSION['id']; 
             $productoId = $_POST['producto_id'];
@@ -72,6 +73,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
             break;
         
+            case "modificarVenta":
+                $ventaId = $_POST['id'];
+                $cantidad = $_POST['cantidad'];
+                $precioTotal = $_POST['precio_total'];
+            
+               
+            
+                $cambios = DAOVentas::actualizarVenta($ventaId, $cantidad, $precioTotal);
+                if ($cambios) {
+                    $_SESSION['mensaje'] = "Venta actualizada exitosamente.";
+                } else {
+                    $_SESSION['error_mensaje'] = "Error al actualizar la venta.";
+                }
+                 header("Location: ../../index.php"); 
+                exit();
+                break;
+            
+            case 'borrarVenta':
+                $ventaId = $_POST['id'];
+                $venta = DAOVentas::borrarVenta($ventaId);
+                
+               
+                 header("Location: ../../index.php"); 
+                exit();
+            
+               
+                
+                break;
       
         default:
             # code...

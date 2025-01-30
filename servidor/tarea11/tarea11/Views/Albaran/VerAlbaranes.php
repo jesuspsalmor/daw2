@@ -1,4 +1,4 @@
-
+<div class="albaranes">
 <h1>Listado de Albaranes</h1>
 
 <table>
@@ -20,4 +20,4 @@
     <?php endforeach; ?>
 </table>
 
-
+</div>

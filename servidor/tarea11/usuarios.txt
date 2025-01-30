@@ -1,6 +1,9 @@
 la base de datos se conecta a localhost como root y sin contraseña
-falta la parte de administrador
-y  no se pueden cambiar las contraseñas
-//usuario jesusPrueba3 contraseña  secursAr1 
-//admin1    amdiniSt2
-//moderador1  moderadOr1
+la primera vez es necesario recargar la pagina
+el cambionde contraseña no funciona bien si cambias la contraseña luego no funciona ni la nueva ni la vieja
+
+
+//usuario       contraseña 
+jesusPrueba3    secursAr1 
+admin1        amdiniSt2
+moderador1    moderadOr1

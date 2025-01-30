@@ -29,13 +29,13 @@
         include_once("./APP/Controllers/ControllerProducto.php");
         ?> 
         </article>
-        <article class="ventas">
+        <article >
         <?php
        
         include_once("./APP/Controllers/ControllerVentas.php");
         ?> 
         </article>
-        <article class="ventas">
+        <article >
         <?php
 
         include_once("./APP/Controllers/ControllerAlbaran.php");

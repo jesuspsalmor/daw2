@@ -50,36 +50,34 @@ class DAOVentas {
         return $venta;
     }
 
-    public static function actualizarVenta($ventaId, $usuarioId, $fechaCompra, $productoId, $cantidad, $precioTotal) {
-        $resultado = false;
-        try {
-            $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
-            $consulta = $conexion->prepare("UPDATE ventas SET usuario_id = ?, fecha_compra = ?, producto_id = ?, cantidad = ?, precio_total = ? WHERE id = ?");
-            $consulta->bind_param("isiidi", $usuarioId, $fechaCompra, $productoId, $cantidad, $precioTotal, $ventaId);
-            $resultado = $consulta->execute();
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        } finally {
-            $conexion->close();
-        }
-        return $resultado;
-    }
+    
+    
 
     public static function borrarVenta($ventaId) {
         $resultado = false;
         try {
             $conexion = new mysqli(IPD, USERD, CLAVED, BDD);
+            if ($conexion->connect_error) {
+                throw new Exception('Error de conexión: ' . $conexion->connect_error);
+            }
             $consulta = $conexion->prepare("DELETE FROM ventas WHERE id = ?");
+            if (!$consulta) {
+                throw new Exception('Error en la preparación: ' . $conexion->error);
+            }
             $consulta->bind_param("i", $ventaId);
             $resultado = $consulta->execute();
+            if (!$resultado) {
+                throw new Exception('Error en la ejecución: ' . $consulta->error);
+            }
         } catch (Exception $e) {
-            echo $e->getMessage();
+            echo 'Excepción: ', $e->getMessage(), "\n";
         } finally {
+            $consulta->close();
             $conexion->close();
         }
         return $resultado;
     }
-
+    
     // Método para obtener todas las ventas
     public static function obtenerTodasLasVentas() {
         $ventas = [];

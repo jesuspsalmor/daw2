@@ -36,14 +36,14 @@ main {
 }
 
 /* Estilos para los artículos */
-.añadirStock,.crear-producto,.modificarproducto {
+.añadirStock,.crear-producto,.modificarproducto ,.verproductos,.albaranes,.ventas,.login {
     background-color: white;
     padding: 1em;
     margin: 1em 0;
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 100%;
-    max-width: max-content;
+  
 }
 
 .productos, .ventas {

@@ -5,7 +5,8 @@
         <?php unset($_SESSION['error_mensaje']); ?>
     <?php endif; ?>
 </div>
-<div class="añadirStock"></div>
+<div class="añadirStock">
+<h1>Añadir stock</h1>
 <table>
     <tr>
         <th>ID</th>
@@ -32,3 +33,4 @@
         </tr>
     <?php endforeach; ?>
 </table>
+</div>

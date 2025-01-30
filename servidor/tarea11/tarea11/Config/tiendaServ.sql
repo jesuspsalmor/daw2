@@ -100,9 +100,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`, `email`, `fecha_nacimiento`, `rol_id`) VALUES
-(13, 'jesusPrueba3', '$2y$10$6ANh36VGHM14pIroyMc0z.d5Li7ulntOIohGpBDiOCCts.WKwprOq', 'jesusp.salmor@prueba3.jcy.es', '1990-05-25', 3),
-(14, 'admin1', '$2y$10$fgT2Qy7ehwR1vQdg/hyEIO2uQQL2YDOCh1pXqhfaSJ/CabCqkN8dO', 'admin1@admin1.es', '1990-05-25', 1),
-(15, 'moderador1', '$2y$10$BUZ9.PglpDbiGERdoakDCOauStC0vFV1DCVt2m4MZkDjv.78KYTHW', 'moderador1@moderador1.es', '1990-05-25', 2);
+(1, 'jesusPrueba3', '$2y$10$6ANh36VGHM14pIroyMc0z.d5Li7ulntOIohGpBDiOCCts.WKwprOq', 'jesusp.salmor@prueba3.jcy.es', '1990-05-25', 3),
+(2, 'admin1', '$2y$10$fgT2Qy7ehwR1vQdg/hyEIO2uQQL2YDOCh1pXqhfaSJ/CabCqkN8dO', 'admin1@admin1.es', '1990-05-25', 1),
+(2, 'moderador1', '$2y$10$BUZ9.PglpDbiGERdoakDCOauStC0vFV1DCVt2m4MZkDjv.78KYTHW', 'moderador1@moderador1.es', '1990-05-25', 2);
 
 -- --------------------------------------------------------
 

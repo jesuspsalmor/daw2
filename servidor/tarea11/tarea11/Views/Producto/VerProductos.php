@@ -1,4 +1,4 @@
-
+<div class="verproductos">
     <h1>Listado de Productos</h1>
     <table>
         <tr>
@@ -18,3 +18,4 @@
             </tr>
         <?php endforeach; ?>
     </table>
+    </div>

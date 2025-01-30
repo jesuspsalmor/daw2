@@ -1,3 +1,4 @@
+<div class="verproductos">
 <h1>Listado de Productos</h1>
 
 <div id="error-mensaje">
@@ -34,4 +35,4 @@
     <?php endforeach; ?>
 </table>
 
-
+</div>

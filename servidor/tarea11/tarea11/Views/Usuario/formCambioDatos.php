@@ -6,6 +6,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../Public/styles.css">
 </head>
+<header>
+    <div class="latienda">
+        <h1>La Tienda</h1>
+    </div>
+    <div class="usuario">
+    <?php
+include_once("../botonesNavegacion/botonVolverIndex.php");
+?>
+    </div>
+    </header>
 <body>
     <div class="contenedor">
 
@@ -13,11 +23,12 @@
 <?php
 session_start();
 
-include_once("../botonesNavegacion/botonVolverIndex.php");
+
 
 $errores = isset($_SESSION['errores']) ? $_SESSION['errores'] : [];
 ?>
 
+<div class="login">
 <form method="POST" action="../../APP/Controllers/ControllerUsuario.php">
     <label for="email" id="labelEmail">Email:</label>
     <input type="email" name="email" id="email" value="<?= isset($_SESSION['email']) ? htmlspecialchars($_SESSION['email']) : '' ?>">
@@ -36,12 +47,12 @@ $errores = isset($_SESSION['errores']) ? $_SESSION['errores'] : [];
 
     <button type="submit" name="accion" value="guardarCambiosEmailFecha">Guardar Cambios</button>
 </form>
-
-<!-- Formulario de cambio de contraseña -->
+</div>
+<div class="login">
 <form method="POST" action="../../APP/Controllers/ControllerUsuario.php">
     <button type="submit" name="accion" value="CambioContraseña">Cambiar Contraseña</button>
 </form>
-
+</div>
 <?php
 unset($_SESSION['errores']);
 ?>
