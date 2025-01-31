@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form action="">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" required>
+            <label for="email" >Correo electronico</label>
+            <input type="email" name="email" id="email" required pattern="“\S+@\S+\.\S+">
+            <label for="contraseña">contraseña</label>
+            <input type="password" name="password" id="password" required>
+            <label for="contraseña2">repite contraseña</label>
+            <input type="password" name="password2" id="password2" minlength="8" required>
+            <label for="edad">Edad</label>
+            <input type="number" min="18" max="99" id="edad">
+            <label for="sexo">genero</label>
+            Varon:<input type="radio" name="sexo" id="masculino">
+            Hembra:<input type="radio" name="sexo" id="femenino">
+            <label for="terminos">acepta terminos y condiciones</label>
+            <input type="checkbox" required>
+            <button type="submit" id="formEnviar"></button>
+        </form>
+    </div>
+</body>
+</html>
