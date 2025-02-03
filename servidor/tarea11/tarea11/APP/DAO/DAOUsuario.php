@@ -1,5 +1,5 @@
 <?php
-include_once("Config/conexionBDDefecto.php");
+include_once("../../Config/conexionBDDefecto.php");
 include_once("../../Models/Usuario.php");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 

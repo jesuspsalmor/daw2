@@ -3,18 +3,6 @@
 session_start();
 
 
-if (isset($_SESSION['nombreUsuario'])) {
-    $usuario = $_SESSION['nombreUsuario'];
-    $rol_id=$_SESSION['rol_id'];
-    
-
-     include_once("Views/Usuario/botonUsusario.php");
-
-} else {
-   
-    include_once("Views/Usuario/botonInicioSesion.php");
-   
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -235,6 +223,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "error";
             break;
     }
+}else{
+    
+if (isset($_SESSION['nombreUsuario'])) {
+    $usuario = $_SESSION['nombreUsuario'];
+    $rol_id=$_SESSION['rol_id'];
+    
+
+     include_once("Views/Usuario/BotonUsusario.php");
+
+} else {
+   
+    include_once("Views/Usuario/BotonInicioSesion.php");
+   
+}
 }
 ?>
 
