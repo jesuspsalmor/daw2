@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de CSS Grid: justify-content</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        /* Etiquetas descriptivas */
+        .description {
+            text-align: center;
+            margin-bottom: 10px;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Estilos del Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 100px);
+            grid-template-rows: 100px 100px;            
+            gap: 10px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            height: 450px;
+            border: 2px solid #ccc;
+            margin: 20px auto;
+            width: 100%;
+        }
+
+        /* Estilos de los ítems del Grid */
+        .grid-item {
+            background-color: #4CAF50;
+            color: white;
+            display: flex;
+            align-items: center; /* Centra verticalmente el contenido dentro del ítem */
+            justify-content: center; /* Centra horizontalmente el contenido dentro del ítem */
+            font-size: 24px;
+            border-radius: 5px;
+        }
+
+        /* Ejemplo con justify-content */
+        .justify-content-example {
+            justify-content: start; /* Valor por defecto */
+            background-color: #ffe0b2;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+            background-color: #c8e6c9;
+        }
+
+        .justify-content-end {
+            justify-content: end;
+            background-color: #bbdefb;
+        }
+
+        .justify-content-space-between {
+            justify-content: space-between;
+            background-color: #d1c4e9;
+        }
+
+        .justify-content-space-around {
+            justify-content: space-around;
+            background-color: #ffccbc;
+        }
+
+        .justify-content-space-evenly {
+            justify-content: space-evenly;
+            background-color: #f8bbd0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de CSS Grid: justify-content</h1>
+
+    <!-- Grid con justify-content: start -->
+    <section>
+        <h2>justify-content: start</h2>
+        <p class="description">Alinea los elementos al inicio del eje horizontal.</p>
+        <div class="grid-container justify-content-example">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+        </div>
+    </section>
+
+    <!-- Grid con justify-content: center -->
+    <section>
+        <h2>justify-content: center</h2>
+        <p class="description">Centra los elementos en el eje horizontal.</p>
+        <div class="grid-container justify-content-center">
+            <div class="grid-item">A</div>
+            <div class="grid-item">B</div>
+            <div class="grid-item">C</div>
+            <div class="grid-item">D</div>
+        </div>
+    </section>
+
+    <!-- Grid con justify-content: end -->
+    <section>
+        <h2>justify-content: end</h2>
+        <p class="description">Alinea los elementos al final del eje horizontal.</p>
+        <div class="grid-container justify-content-end">
+            <div class="grid-item">I</div>
+            <div class="grid-item">II</div>
+            <div class="grid-item">III</div>
+            <div class="grid-item">IV</div>
+        </div>
+    </section>
+
+    <!-- Grid con justify-content: space-between -->
+    <section>
+        <h2>justify-content: space-between</h2>
+        <p class="description">Distribuye los elementos con espacios iguales entre ellos.</p>
+        <div class="grid-container justify-content-space-between">
+            <div class="grid-item">Alpha</div>
+            <div class="grid-item">Beta</div>
+            <div class="grid-item">Gamma</div>
+            <div class="grid-item">Delta</div>
+        </div>
+    </section>
+
+    <!-- Grid con justify-content: space-around -->
+    <section>
+        <h2>justify-content: space-around</h2>
+        <p class="description">Distribuye los elementos con espacios iguales alrededor de ellos.</p>
+        <div class="grid-container justify-content-space-around">
+            <div class="grid-item">X</div>
+            <div class="grid-item">Y</div>
+            <div class="grid-item">Z</div>
+            <div class="grid-item">W</div>
+        </div>
+    </section>
+
+    <!-- Grid con justify-content: space-evenly -->
+    <section>
+        <h2>justify-content: space-evenly</h2>
+        <p class="description">Distribuye los elementos con espacios iguales entre ellos y los bordes del contenedor.</p>
+        <div class="grid-container justify-content-space-evenly">
+            <div class="grid-item">Uno</div>
+            <div class="grid-item">Dos</div>
+            <div class="grid-item">Tres</div>
+            <div class="grid-item">Cuatro</div>
+        </div>
+    </section>
+</body>
+</html>

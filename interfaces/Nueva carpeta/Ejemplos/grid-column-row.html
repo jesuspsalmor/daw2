@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo 1: grid-column y grid-row</title>
+  <style>
+    /* Contenedor: 4 columnas de 100px y 3 filas de 50px, con 10px de separación */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      grid-template-rows: repeat(3, 50px);
+      gap: 10px;
+      margin: 20px;
+    }
+
+    /* Ejemplos de grid-column y grid-row */
+    .item1 {
+      /* Ocupa columnas desde la línea 1 hasta la 3 => abarca 2 columnas */
+      grid-column: 1 / 3;
+      /* Ocupa filas desde la línea 1 hasta la 2 => abarca 1 fila */
+      grid-row: 1 / 2;
+      background-color: #f4b042;
+    }
+
+    .item2 {
+      /* Ocupa columna desde la línea 3 hasta la 4 => abarca 1 columna */
+      grid-column: 3 / 4;
+      /* Ocupa filas desde la línea 1 hasta la 3 => abarca 2 filas */
+      grid-row: 1 / 3;
+      background-color: #69bf73;
+    }
+
+    .item3 {
+      /* Ocupa columna desde la línea 1 hasta la 2 => abarca 1 columna */
+      grid-column: 1 / 2;
+      /* Ocupa filas desde la línea 2 hasta la 4 => abarca 2 filas */
+      grid-row: 2 / 4;
+      background-color: #6cbce5;
+    }
+
+    .item4 {
+      /* Ocupa columnas desde la línea 2 hasta la 4 => abarca 2 columnas */
+      grid-column: 2 / 4;
+      /* Ocupa filas desde la línea 2 hasta la 3 => abarca 1 fila */
+      grid-row: 2 / 3;
+      background-color: #d98dcb;
+    }
+
+    .item5 {
+      /* Ocupa columnas desde la línea 3 hasta la 5 => abarca 2 columnas (recuerda que con 4 cols hay líneas 1,2,3,4,5) */
+      grid-column: 3 / 5;
+      /* Ocupa fila desde la línea 1 hasta la 2 => abarca 1 fila */
+      grid-row: 1 / 2;
+      background-color: #f1e189;
+    }
+
+    /* Algo de estilo general para ver el texto */
+    .container div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ejemplo 1: grid-column y grid-row</h1>
+  <div class="container">
+    <div class="item1">Item 1</div>
+    <div class="item2">Item 2</div>
+    <div class="item3">Item 3</div>
+    <div class="item4">Item 4</div>
+    <div class="item5">Item 5</div>
+  </div>
+</body>
+</html>

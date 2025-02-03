@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo 5: Agregar Marcas de Corte y Sangrado con @page</title>
+    <style>
+        /* ======================================
+           Estilos Generales para el Documento
+           ====================================== */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header, footer {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* ======================================
+           Ejemplo 5: Agregar Marcas de Corte y Sangrado
+           ====================================== */
+        @page {
+            bleed: 1cm; /* Define un área de sangrado de 1cm */
+            marks: crop cross; /* Agrega marcas de corte y registro */
+        }
+
+        /* Estilos para impresión */
+        @media print {
+            /* Ocultar elementos no deseados en impresión */
+            nav.no-print, footer.no-print {
+                display: none;
+            }
+
+            /* Ajustar márgenes generales si no se ha definido en @page */
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 12pt;
+            }
+
+            /* Opcional: Ajustes adicionales para impresión */
+            header, footer {
+                background-color: #ffffff; /* Cambia el fondo en impresión si lo deseas */
+            }
+
+            /* Mostrar marcas de corte y registro si el navegador lo soporta */
+            /* Nota: Muchos navegadores no muestran estas marcas en la Vista Previa de Impresión */
+        }
+
+        /* Estilos para pantalla */
+        @media screen {
+            nav {
+                background-color: #2c3e50;
+                color: white;
+                padding: 10px;
+                text-align: center;
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            nav ul li {
+                display: inline;
+                margin: 0 15px;
+            }
+
+            nav ul li a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            footer {
+                background-color: #2c3e50;
+                color: white;
+                padding: 10px;
+                position: fixed;
+                width: 100%;
+                bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Documento de Ejemplo: Agregar Marcas de Corte y Sangrado</h1>
+    </header>
+
+    <nav class="no-print">
+        <ul>
+            <li><a href="#ejemplo5">Ejemplo 5</a></li>
+            <li><a href="ejemplo1_page.html">Ejemplo 1</a></li>
+            <li><a href="ejemplo2_page.html">Ejemplo 2</a></li>
+            <li><a href="ejemplo3_page.html">Ejemplo 3</a></li>
+            <li><a href="ejemplo4_page.html">Ejemplo 4</a></li>
+            <!-- Agrega enlaces a otros ejemplos si los tienes -->
+        </ul>
+    </nav>
+
+    <main>
+        <!-- ===============================
+             Ejemplo 5: Agregar Marcas de Corte y Sangrado
+             =============================== -->
+        <section id="ejemplo5">
+            <h2>Ejemplo 5: Agregar Marcas de Corte y Sangrado</h2>
+            <p>
+                En este ejemplo, utilizamos la regla <code>@page</code> en CSS para agregar marcas de corte (<strong>crop</strong>) y registro (<strong>cross</strong>), así como para definir un área de sangrado (<strong>bleed</strong>) en la página impresa.
+                Estas características son esenciales para impresiones profesionales, ya que facilitan el proceso de recorte y aseguramiento de que el contenido se extienda más allá de los bordes finales del documento.
+            </p>
+            <p>
+                Para ver los efectos de esta configuración, sigue las instrucciones a continuación para acceder a la Vista Previa de Impresión en tu navegador.
+            </p>
+        </section>
+
+        <section>
+            <h2>Contenido de Muestra</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae eros at libero aliquam faucibus. Integer nec dolor nec nisi aliquet tristique.
+                Cras vitae magna ut libero tincidunt interdum. Phasellus ut nunc ac arcu volutpat egestas. Vestibulum ante ipsum primis in faucibus orci luctus et
+                ultrices posuere cubilia curae; Sed vehicula, lectus a cursus ullamcorper, leo ex facilisis lorem, nec cursus velit sapien at nisl. Donec at arcu
+                vitae urna feugiat cursus.
+            </p>
+            <p>
+                Morbi ullamcorper, nunc non ultricies gravida, lacus justo ultrices ligula, vel consequat odio massa non lacus. Sed scelerisque, urna non bibendum
+                tempus, ligula nisl hendrerit erat, non placerat augue tortor at metus. Fusce euismod, nisl eget consequat ullamcorper, mauris justo facilisis mauris,
+                nec cursus metus nisl a magna.
+            </p>
+            <p>
+                Aliquam erat volutpat. Suspendisse potenti. In hac habitasse platea dictumst. Nullam scelerisque, justo a vehicula consequat, arcu neque tempor
+                turpis, at facilisis nisl purus vel mauris. Curabitur quis libero in neque egestas pellentesque. Sed fermentum, nisl ac gravida dignissim,
+                odio lacus tempor ligula, vitae facilisis augue sapien in odio.
+            </p>
+            <!-- Repetir párrafos para generar múltiples páginas en impresión -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae eros at libero aliquam faucibus. Integer nec dolor nec nisi aliquet tristique.</p>
+            <p>Cras vitae magna ut libero tincidunt interdum. Phasellus ut nunc ac arcu volutpat egestas.</p>
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed vehicula, lectus a cursus ullamcorper.</p>
+            <p>Leo ex facilisis lorem, nec cursus velit sapien at nisl. Donec at arcu vitae urna feugiat cursus.</p>
+            <p>Morbi ullamcorper, nunc non ultricies gravida, lacus justo ultrices ligula, vel consequat odio massa non lacus.</p>
+            <p>Sed scelerisque, urna non bibendum tempus, ligula nisl hendrerit erat, non placerat augue tortor at metus.</p>
+            <p>Fusce euismod, nisl eget consequat ullamcorper, mauris justo facilisis mauris, nec cursus metus nisl a magna.</p>
+            <p>Aliquam erat volutpat. Suspendisse potenti. In hac habitasse platea dictumst.</p>
+            <p>Nullam scelerisque, justo a vehicula consequat, arcu neque tempor turpis, at facilisis nisl purus vel mauris.</p>
+            <p>Curabitur quis libero in neque egestas pellentesque. Sed fermentum, nisl ac gravida dignissim, odio lacus tempor ligula.</p>
+        </section>
+    </main>
+
+    <footer class="no-print">
+        <p>&copy; 2024 Ejemplo de @page en CSS</p>
+    </footer>
+
+    <!-- ======================================
+         Contenido Adicional para Marcas de Corte y Sangrado (Solo Impresión)
+         ====================================== -->
+    <!-- Las marcas de corte y registro se añaden automáticamente por el navegador si es compatible -->
+
+    <!-- ======================================
+         Estilos para Impresión Adicionales
+         ====================================== -->
+    <style>
+        @media print {
+            /* Ocultar elementos no deseados en impresión */
+            nav.no-print, footer.no-print {
+                display: none;
+            }
+
+            /* Ajustar márgenes generales si no se ha definido en @page */
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 12pt;
+            }
+
+            /* Opcional: Ajustes adicionales para impresión */
+            header, footer {
+                background-color: #ffffff; /* Cambia el fondo en impresión si lo deseas */
+            }
+        }
+    </style>
+</body>
+</html>

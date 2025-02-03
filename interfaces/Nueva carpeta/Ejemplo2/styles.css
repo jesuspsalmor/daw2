@@ -1,0 +1,237 @@
+/* Reset básico para eliminar márgenes y paddings innecesarios */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Asegurar que la altura de la página se tome correctamente */
+html, body {
+    height: 100%;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Contenedor principal que usa flexbox */
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el contenedor ocupe al menos el 100% de la altura de la ventana */
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 
+    0              /* Desplazamiento horizontal: 0px (sin desplazamiento hacia la derecha ni izquierda) */
+    4px            /* Desplazamiento vertical: 4px (la sombra se desplaza 4 píxeles hacia abajo) */
+    6px            /* Desenfoque: 6px (la sombra tiene un desenfoque moderado, se difumina hacia afuera) */
+    rgba(0, 0, 0, 0.1);  /* Color: negro con 10% de opacidad (sombra suave y ligera, con muy poca opacidad) */
+
+    position: relative;
+}
+
+/* Menú de navegación */
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#menu ul li {
+    margin: 0 15px;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#menu ul li a:hover {
+    color: #e74c3c;
+    transform: scale(1.05);
+}
+
+/* Botón toggle para móviles */
+#menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Contenido principal */
+#contenido {
+    flex: 1; /* Este espacio crece para ocupar el espacio restante */
+    padding: 30px;
+    background-color: #ecf0f1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.7; /*Interlineado*/
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/*Ultimo parrafo del html*/
+.contenido-principal p:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilos para las cards */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 20px); /* Tres cards en fila */
+    text-align: center;
+    margin-top:-40px;
+}
+
+.card h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: auto;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries */
+
+/* Para pantallas más grandes, como escritorios */
+@media screen and (min-width: 1024px) {
+    #menu ul li {
+        margin: 0 25px;
+    }
+
+    #contenido {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+    }
+
+    .contenido-principal {
+        flex: 0 1 70%;
+        padding: 30px;
+    }    
+  
+}
+
+/* Para pantallas medianas, como tabletas en orientación horizontal */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    #menu ul li {
+        margin: 0 15px;
+    }
+
+    #contenido {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .contenido-principal {
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+
+    .card {
+        width: calc(50% - 20px); /* Dos cards por fila en tabletas */
+        margin-top:0px;
+    }
+}
+
+/* Para pantallas pequeñas, como teléfonos móviles */
+@media screen and (max-width: 768px) {
+    #menu ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0px;
+        background-color: #2c3e50;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    #menu ul.active {
+        display: flex;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    #menu ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    #contenido {
+        padding: 20px;
+    }
+
+    .card {
+        width: calc(100% - 20px); /* Una card por fila en móviles */
+        margin-top:0px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}

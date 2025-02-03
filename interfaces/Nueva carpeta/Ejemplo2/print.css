@@ -1,0 +1,83 @@
+/* Hoja de estilo para impresión */
+@media print {
+    /* Restablecer márgenes de página */
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Asegurar márgenes de página */
+    @page {
+        size: A4portra;
+        margin: 40mm; /* Márgenes de 20mm en todos los lados */
+   
+}
+
+    }
+
+    /* Ocultar elementos innecesarios para impresión */
+    #menu, #menu-toggle, .footer {
+        display: none;
+    }
+
+    /* Estilizar el contenido principal para ocupar toda la página */
+    #contenido {
+        padding: 10mm;
+        font-size: 14px;
+        background-color: transparent;
+    }
+
+    /* Estilizar los títulos */
+    h1 {
+        font-size: 20px;
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 16px;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 1.5;
+        color: #7f8c8d;
+        margin-bottom: 10px;
+    }
+
+    /* Estilos para las cards */
+    .cards-container {
+        display: block; /* Cambiar a bloque para que las cards ocupen todo el ancho */
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 100%; /* Las cards ocuparán todo el ancho disponible */
+        padding: 15px;
+        box-shadow: none; /* Eliminar sombras para impresión */
+        margin-bottom: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    /* Mejorar el pie de página */
+    footer {
+        font-size: 10px;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        display: block;
+        background-color: transparent;
+        color: #2c3e50;
+    }
+
+    /* Ajustes para imágenes (si hay alguna) */
+    img {
+        max-width: 100%;
+        height: auto;
+    }

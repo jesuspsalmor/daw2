@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplos de Alineación en CSS Grid</title>
+  <style>
+    /* Estilos generales para ver mejor los contenedores */
+    body {
+      margin: 20px;
+      font-family: sans-serif;
+    }
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 100px); /* 3 columnas fijas de 100px */
+      grid-template-rows: repeat(2, 100px);    /* 2 filas fijas de 100px */
+      gap: 10px;
+      margin-bottom: 40px;
+      background-color: #f0f0f0;
+      padding: 10px;
+    }
+    .item {
+      background-color: #cce5ff;
+      border: 2px solid #99ccff;
+      display: flex;               /* Para centrar texto dentro del item */
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* ============================================================
+       EJEMPLO 1: Alineación individual con justify-self / align-self
+       ============================================================ */
+
+    /* Justify-self controla la alineación horizontal del item */
+    /* Align-self controla la alineación vertical del item */
+    .item1 {
+      justify-self: start;  /* Se alinea a la izquierda de su celda */
+      align-self: start;    /* Se alinea en la parte superior de su celda */
+    }
+    .item2 {
+      justify-self: center; /* Se centra horizontalmente en su celda */
+      align-self: center;   /* Se centra verticalmente en su celda */
+    }
+    .item3 {
+      justify-self: end;    /* Se alinea a la derecha de su celda */
+      align-self: end;      /* Se alinea en la parte inferior de su celda */
+    }
+    .item4 {
+      justify-self: stretch; /* Se expande horizontalmente para ocupar toda la celda */
+      align-self: stretch;   /* Se expande verticalmente para ocupar toda la celda */
+      background-color: #ffe5cc; /* Color distinto para notar la expansión */
+      border: 2px dashed #ffcc99;
+    }
+
+    /* ============================================================
+       EJEMPLO 2: Alineación individual con place-self (atajo)
+       ============================================================ */
+
+    /* place-self: <align-self> <justify-self> */
+    .item5 {
+      place-self: start end; /* align-self: start; justify-self: end */
+      background-color: #e2f9e1;
+      border: 2px dotted #b2e8ad;
+    }
+    .item6 {
+      place-self: center center; /* align-self: center; justify-self: center */
+      background-color: #f9e1f5;
+      border: 2px dotted #e8addd;
+    }
+
+    /* ============================================================
+       EJEMPLO 3: Alineación a nivel de contenedor con justify-items / align-items
+       ============================================================ */
+    .container-level-1 {
+      /* Justifica todos los items al centro horizontalmente */
+      justify-items: center;
+      /* Alinea todos los items al final verticalmente */
+      align-items: end;
+    }
+
+    /* ============================================================
+       EJEMPLO 4: Alineación a nivel de contenedor con place-items
+       ============================================================ */
+    .container-level-2 {
+      /* place-items: <align-items> <justify-items>  */
+      place-items: center end; 
+      /* => align-items: center, justify-items: end */
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Ejemplos de Alineación en CSS Grid</h1>
+
+  <!-- ================================================ -->
+  <!-- EJEMPLO 1: Alineación individual con justify-self / align-self -->
+  <!-- ================================================ -->
+  <h2>Ejemplo 1: Alineación con <code>justify-self</code> y <code>align-self</code></h2>
+  <div class="container">
+    <div class="item item1">Item 1</div>
+    <div class="item item2">Item 2</div>
+    <div class="item item3">Item 3</div>
+    <div class="item item4">Item 4</div>
+    <!-- Dejar celdas vacías, para ver la distribución en 2 filas x 3 columnas -->
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+  </div>
+
+  <!-- ================================================ -->
+  <!-- EJEMPLO 2: Alineación individual con place-self -->
+  <!-- ================================================ -->
+  <h2>Ejemplo 2: Alineación con <code>place-self</code></h2>
+  <div class="container">
+    <div class="item item5">Item 5</div>
+    <div class="item item6">Item 6</div>
+    <div class="item">Item 7</div>
+    <div class="item">Item 8</div>
+    <div class="item">Item 9</div>
+    <div class="item">Item 10</div>
+  </div>
+
+  <!-- ================================================ -->
+  <!-- EJEMPLO 3: Alineación a nivel de contenedor (justify-items / align-items) -->
+  <!-- ================================================ -->
+  <h2>Ejemplo 3: Alineación de todos los items con <code>justify-items</code> y <code>align-items</code></h2>
+  <div class="container container-level-1">
+    <div class="item">Item A</div>
+    <div class="item">Item B</div>
+    <div class="item">Item C</div>
+    <div class="item">Item D</div>
+    <div class="item">Item E</div>
+    <div class="item">Item F</div>
+  </div>
+  <p>
+    En este ejemplo, <code>justify-items: center;</code> centra todos los items
+    horizontalmente y <code>align-items: end;</code> los alinea al final
+    verticalmente.
+  </p>
+
+  <!-- ================================================ -->
+  <!-- EJEMPLO 4: Alineación a nivel de contenedor con place-items -->
+  <!-- ================================================ -->
+  <h2>Ejemplo 4: Alineación de todos los items con <code>place-items</code></h2>
+  <div class="container container-level-2">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+  </div>
+  <p>
+    Aquí usamos <code>place-items: center end;</code>, lo que combina 
+    <code>align-items: center;</code> y <code>justify-items: end;</code>.
+  </p>
+
+</body>
+</html>

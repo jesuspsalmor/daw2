@@ -3,15 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-01-2025 a las 12:59:28
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
- CREATE DATABASE ligadeportiva;
- use ligadeportiva;
+-- Tiempo de generacion: 31-01-2025 a las 12:59:28
+-- Version del servidor: 10.4.32-MariaDB
+-- Version de PHP: 8.2.12
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
+CREATE DATABASE ligadeportiva;
+USE ligadeportiva;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -39,9 +39,9 @@ CREATE TABLE `equipos` (
 --
 
 INSERT INTO `equipos` (`CodEquipo`, `Nombre`, `Localidad`) VALUES
-(1, 'Equipo Ávila', 'Ávila'),
+(1, 'Equipo Avila', 'Avila'),
 (2, 'Equipo Burgos', 'Burgos'),
-(3, 'Equipo León', 'León'),
+(3, 'Equipo Leon', 'Leon'),
 (4, 'Equipo Palencia', 'Palencia'),
 (5, 'Equipo Salamanca', 'Salamanca'),
 (6, 'Equipo Segovia', 'Segovia'),
@@ -68,36 +68,36 @@ CREATE TABLE `jugadores` (
 --
 
 INSERT INTO `jugadores` (`CodJugador`, `Nombre`, `Posicion`, `Sueldo`, `CodEquipo`) VALUES
-(1, 'Jugador1 Ávila', 'Portero', 50000.00, 1),
-(2, 'Jugador2 Ávila', 'Defensa', 60000.00, 1),
-(3, 'Jugador3 Ávila', 'Defensa', 60000.00, 1),
-(4, 'Jugador4 Ávila', 'Defensa', 60000.00, 1),
-(5, 'Jugador5 Ávila', 'Centrocampista', 70000.00, 1),
-(6, 'Jugador6 Ávila', 'Centrocampista', 70000.00, 1),
-(7, 'Jugador7 Ávila', 'Centrocampista', 70000.00, 1),
-(8, 'Jugador8 Ávila', 'Centrocampista', 70000.00, 1),
-(9, 'Jugador9 Ávila', 'Delantero', 80000.00, 1),
-(10, 'Jugador10 Ávila', 'Delantero', 80000.00, 1),
-(11, 'Jugador11 Ávila', 'Delantero', 80000.00, 1),
-(12, 'Jugador12 Ávila', 'Delantero', 80000.00, 1),
-(13, 'Jugador13 Ávila', 'Delantero', 80000.00, 1),
-(14, 'Jugador14 Ávila', 'Defensa', 60000.00, 1),
-(15, 'Jugador15 Ávila', 'Centrocampista', 70000.00, 1),
-(16, 'Jugador1 León', 'Portero', 50000.00, 3),
-(17, 'Jugador2 León', 'Defensa', 60000.00, 3),
-(18, 'Jugador3 León', 'Defensa', 60000.00, 3),
-(19, 'Jugador4 León', 'Defensa', 60000.00, 3),
-(20, 'Jugador5 León', 'Centrocampista', 70000.00, 3),
-(21, 'Jugador6 León', 'Centrocampista', 70000.00, 3),
-(22, 'Jugador7 León', 'Centrocampista', 70000.00, 3),
-(23, 'Jugador8 León', 'Centrocampista', 70000.00, 3),
-(24, 'Jugador9 León', 'Delantero', 80000.00, 3),
-(25, 'Jugador10 León', 'Delantero', 80000.00, 3),
-(26, 'Jugador11 León', 'Delantero', 80000.00, 3),
-(27, 'Jugador12 León', 'Delantero', 80000.00, 3),
-(28, 'Jugador13 León', 'Delantero', 80000.00, 3),
-(29, 'Jugador14 León', 'Defensa', 60000.00, 3),
-(30, 'Jugador15 León', 'Centrocampista', 70000.00, 3),
+(1, 'Jugador1 Avila', 'Portero', 50000.00, 1),
+(2, 'Jugador2 Avila', 'Defensa', 60000.00, 1),
+(3, 'Jugador3 Avila', 'Defensa', 60000.00, 1),
+(4, 'Jugador4 Avila', 'Defensa', 60000.00, 1),
+(5, 'Jugador5 Avila', 'Centrocampista', 70000.00, 1),
+(6, 'Jugador6 Avila', 'Centrocampista', 70000.00, 1),
+(7, 'Jugador7 Avila', 'Centrocampista', 70000.00, 1),
+(8, 'Jugador8 Avila', 'Centrocampista', 70000.00, 1),
+(9, 'Jugador9 Avila', 'Delantero', 80000.00, 1),
+(10, 'Jugador10 Avila', 'Delantero', 80000.00, 1),
+(11, 'Jugador11 Avila', 'Delantero', 80000.00, 1),
+(12, 'Jugador12 Avila', 'Delantero', 80000.00, 1),
+(13, 'Jugador13 Avila', 'Delantero', 80000.00, 1),
+(14, 'Jugador14 Avila', 'Defensa', 60000.00, 1),
+(15, 'Jugador15 Avila', 'Centrocampista', 70000.00, 1),
+(16, 'Jugador1 Leon', 'Portero', 50000.00, 3),
+(17, 'Jugador2 Leon', 'Defensa', 60000.00, 3),
+(18, 'Jugador3 Leon', 'Defensa', 60000.00, 3),
+(19, 'Jugador4 Leon', 'Defensa', 60000.00, 3),
+(20, 'Jugador5 Leon', 'Centrocampista', 70000.00, 3),
+(21, 'Jugador6 Leon', 'Centrocampista', 70000.00, 3),
+(22, 'Jugador7 Leon', 'Centrocampista', 70000.00, 3),
+(23, 'Jugador8 Leon', 'Centrocampista', 70000.00, 3),
+(24, 'Jugador9 Leon', 'Delantero', 80000.00, 3),
+(25, 'Jugador10 Leon', 'Delantero', 80000.00, 3),
+(26, 'Jugador11 Leon', 'Delantero', 80000.00, 3),
+(27, 'Jugador12 Leon', 'Delantero', 80000.00, 3),
+(28, 'Jugador13 Leon', 'Delantero', 80000.00, 3),
+(29, 'Jugador14 Leon', 'Defensa', 60000.00, 3),
+(30, 'Jugador15 Leon', 'Centrocampista', 70000.00, 3),
 (31, 'Jugador1 Burgos', 'Portero', 50000.00, 2),
 (32, 'Jugador2 Burgos', 'Defensa', 60000.00, 2),
 (33, 'Jugador3 Burgos', 'Defensa', 60000.00, 2),
@@ -205,7 +205,7 @@ INSERT INTO `jugadores` (`CodJugador`, `Nombre`, `Posicion`, `Sueldo`, `CodEquip
 (135, 'Jugador15 Zamora', 'Centrocampista', 70000.00, 9);
 
 --
--- Índices para tablas volcadas
+-- Indices para tablas volcadas
 --
 
 --

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Boxes con Breakpoints</title>
+    <style>
+        /* Estilos base (mobile-first) */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: red;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Columnas por defecto (móvil) */
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .box {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Ocultar cajas adicionales por defecto */
+        .box.hidden {
+            display: none;
+        }
+
+        /* Media query para tabletas */
+        @media (min-width: 600px) {
+            body {
+                background-color: green;
+            }
+
+            .container {
+                flex-direction: row; /* Cambia a fila */
+                flex-wrap: wrap;
+                justify-content: space-around;
+                padding: 20px;
+            }
+
+            .box {
+                width: 45%; /* Dos cajas por fila */
+                margin-bottom: 20px;
+            }
+
+            /* Mostrar la cuarta caja */
+            .box.hidden.tablet {
+                display: block;
+            }
+        }
+
+        /* Media query para desktop */
+        @media (min-width: 1024px) {
+            body {
+                background-color: blue;
+            }
+
+            .container {
+                flex-direction: row; /* Fila */
+                justify-content: space-between;
+                padding: 30px;
+            }
+
+            .box {
+                width: 18%; /* Cinco cajas por fila */
+                margin-bottom: 0;
+            }
+
+            /* Mostrar la quinta caja */
+            .box.hidden.desktop {
+                display: block;
+            }
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">JAVIER PASCUAL DE ANTA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">37600.0000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">JAVIER PASCUAL DE ANTA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x010100E408A539F243E143A763043EBC6D22AD</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <div class="container">
+        <div class="box">Caja 1</div>
+        <div class="box">Caja 2</div>
+        <div class="box">Caja 3</div>
+        <div class="box hidden tablet">Caja 4</div>
+        <div class="box hidden desktop">Caja 5</div>
+    </div>
+</body>
+</html>
+s

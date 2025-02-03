@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de grid-auto-flow: dense</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 100px); /* 5 columnas de 100px cada una */
+            grid-template-rows: repeat(5, 100px);    /* 5 filas de 100px cada una */
+            grid-gap: 10px;                          /* Espacio entre los elementos */
+            grid-auto-flow:  dense;                 /* Flujo de izquierda a derecha con optimización de espacio */
+            background-color: #f0f0f0;
+            height: 550px;  /* Altura del contenedor */
+        }
+
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .item1 { grid-row: span 2; } /* Elemento que ocupa 2 filas */
+        .item2 { grid-column: span 2; } /* Elemento que ocupa 2 columnas */
+        .item3 { grid-row: span 3; } /* Elemento que ocupa 3 filas */
+        .item4 { grid-column: span 3; } /* Elemento que ocupa 3 columnas */
+        .item5 { grid-column: span 2; } /* Elemento que ocupa 2 columnas */
+    </style>
+</head>
+<body>
+
+    <h2>Ejemplo de `grid-auto-flow: dense`</h2>
+    <div class="grid-container">
+        <div class="grid-item item1">Item 1</div>
+        <div class="grid-item item2">Item 2</div>
+        <div class="grid-item item3">Item 3</div>
+        <div class="grid-item item4">Item 4</div>
+        <div class="grid-item item5">Item 5</div>
+        <div class="grid-item">Item 6</div>
+        <div class="grid-item">Item 7</div>
+        <div class="grid-item">Item 8</div>
+        <div class="grid-item">Item 9</div>
+        <div class="grid-item">Item 10</div>
+    </div>
+
+</body>
+</html>

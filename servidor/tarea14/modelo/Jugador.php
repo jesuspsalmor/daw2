@@ -1,39 +1,57 @@
 <?php
-class Jugador{
+class Jugador {
     private $codEquipo;
     private $codJugador;
     private $nombre;
     private $posicion;
     private $sueldo;
 
-    protected  function __construct($codEquipo,$codJugador,$nombre,$posicion,$sueldo) {
-        $this->codEquipo=$codEquipo;
-        $this->codJugador=$codJugador;
-        $this->nombre=$nombre;
-        $this->posicion=$posicion;
-        $this->sueldo=$sueldo;
+    public function __construct($codEquipo, $codJugador, $nombre, $posicion, $sueldo) {
+        $this->codEquipo = $codEquipo;
+        $this->codJugador = $codJugador;
+        $this->nombre = $nombre;
+        $this->posicion = $posicion;
+        $this->sueldo = $sueldo;
     }
-    protected function getcodEquipo(){
+
+    public function getCodEquipo() {
         return $this->codEquipo;
     }
-    protected function getCodJugador(){
+
+    public function getCodJugador() {
         return $this->codJugador;
     }
-    protected function getNombe(){
+
+    public function getNombre() {
         return $this->nombre;
     }
-    protected function getPosicion(){
-        return $this->Posicion;
+
+    public function getPosicion() {
+        return $this->posicion;
     }
-    protected function getcod(){
+
+    public function getSueldo() {
         return $this->sueldo;
     }
-    protected function setCodEquipo($codEquipo){
-        $this->codEquipo=$codEquipo
+
+    public function setCodEquipo($codEquipo) {
+        $this->codEquipo = $codEquipo;
     }
-    protected function setCodJuagdor($codJugador){
-        $this->
+
+    public function setCodJugador($codJugador) {
+        $this->codJugador = $codJugador;
+    }
+
+    public function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    public function setPosicion($posicion) {
+        $this->posicion = $posicion;
+    }
+
+    public function setSueldo($sueldo) {
+        $this->sueldo = $sueldo;
     }
 }
-
 ?>

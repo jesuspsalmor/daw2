@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Layout Responsivo con CSS Grid</title>
+  <style>
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 20px;
+      padding: 20px;
+      background-color: #ecf0f1;
+    }
+    .card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    .card h3 {
+      margin: 15px 0 10px 0;
+      color: #2980b9;
+    }
+    .card p {
+      color: #7f8c8d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center; margin-top:20px;">Galería de Tarjetas</h1>
+
+  <div class="card-grid">
+    <div class="card">
+      <img src="https://via.placeholder.com/250x150.png?text=Imagen+1" alt="Imagen 1">
+      <h3>Título 1</h3>
+      <p>Descripción breve de la tarjeta 1.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x150.png?text=Imagen+2" alt="Imagen 2">
+      <h3>Título 2</h3>
+      <p>Descripción breve de la tarjeta 2.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x150.png?text=Imagen+3" alt="Imagen 3">
+      <h3>Título 3</h3>
+      <p>Descripción breve de la tarjeta 3.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x150.png?text=Imagen+4" alt="Imagen 4">
+      <h3>Título 4</h3>
+      <p>Descripción breve de la tarjeta 4.</p>
+    </div>
+    <!-- Agrega más tarjetas según sea necesario -->
+  </div>
+
+</body>
+</html>
