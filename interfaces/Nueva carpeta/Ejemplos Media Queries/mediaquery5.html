@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design - Paso 2</title>
+    <style>
+        /* Estilos base (mobile-first) */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: red;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Columnas por defecto (mobile) */
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .box {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s; /* Animación */
+        }
+
+        /* Efecto hover */
+        .box:hover {
+            transform: scale(1.05); /* Aumenta ligeramente */
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Media query para tabletas */
+        @media (min-width: 600px) {
+            body {
+                background-color: green;
+            }
+
+            .container {
+                flex-direction: column; /* Siguen en columna */
+                padding: 20px;
+            }
+
+            .box {
+                font-size: 18px;
+                padding: 30px;
+                width: 80%; /* Más anchas */
+                margin: 0 auto;
+                border: 2px solid #88c;
+                background: linear-gradient(135deg, #f0f8ff, #e0eafc);
+            }
+        }
+
+        /* Media query para desktop */
+        @media (min-width: 1024px) {
+            body {
+                background-color: blue;
+            }
+
+            .container {
+                flex-direction: row; /* Cambia a fila */
+                justify-content: space-between;
+            }
+
+            .box {
+                width: 30%; /* Ocupa 30% del ancho cada una */
+                padding: 40px;
+                font-size: 20px;
+                background: linear-gradient(135deg, #dff9fb, #c7ecee);
+                border: 3px solid #4a69bd;
+            }
+
+            /* Efecto hover más notable en desktop */
+            .box:hover {
+                transform: scale(1.1); /* Aumenta más que en tablet */
+                box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.5);
+            }
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">JAVIER PASCUAL DE ANTA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">37500.0000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">JAVIER PASCUAL DE ANTA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x010100E408A539F243E143A763043EBC6D22AD</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <div class="container">
+        <div class="box">Caja 1</div>
+        <div class="box">Caja 2</div>
+        <div class="box">Caja 3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo Completo de CSS Grid</title>
+  <style>
+    /* Estilos del Contenedor Grid */
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 60px 1fr 40px;
+      gap: 10px;
+      height: 100vh;
+    }
+    
+    /* Estilos de los Elementos Grid */
+    .header {
+      grid-area: header;
+      background-color: #2c3e50;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #34495e;
+      color: white;
+      padding: 20px;
+    }
+    
+    .main {
+      grid-area: main;
+      background-color: #ecf0f1;
+      padding: 20px;
+    }
+    
+    .footer {
+      grid-area: footer;
+      background-color: #2c3e50;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <div class="header">Encabezado</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="main">
+      <h1>Contenido Principal</h1>
+      <p>Este es el contenido principal de la página.</p>
+    </div>
+    <div class="footer">Pie de Página</div>
+  </div>
+
+</body>
+</html>

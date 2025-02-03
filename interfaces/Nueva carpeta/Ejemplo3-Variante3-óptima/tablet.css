@@ -1,0 +1,20 @@
+
+    #menu ul li {
+        margin: 0 15px;
+    }
+
+    #contenido {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .contenido-principal {
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+
+    .card {
+        width: calc(50% - 20px); /* Dos cards por fila en tabletas */
+        margin-top:0px;
+    }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Footer</title>
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 1024px)">
+    <link rel="stylesheet" href="tablet.css" media="screen and (max-width: 1024px) and (min-width: 768px)">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+    <link rel="stylesheet" href="print.css" media="print">
+    
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <nav id="menu">
+                <button id="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+                <ul id="menu-list">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main id="contenido">
+            
+            <section class="contenido-principal">
+                <h1>Bienvenidos a nuestro sitio web</h1>
+                <p>Este es un ejemplo de cómo el footer puede estar pegado al fondo de la pantalla cuando el contenido es insuficiente y desplazarse con el contenido cuando este crece.</p>
+                <p>Agrega más contenido aquí para ver cómo se desplaza el footer.</p>
+            </section>
+
+            <section class="cards-container">
+                <div class="card">
+                    <h3>Card 1</h3>
+                    <p>Contenido de la primera tarjeta.</p>
+                </div>
+                <div class="card">
+                    <h3>Card 2</h3>
+                    <p>Contenido de la segunda tarjeta.</p>
+                </div>
+                <div class="card">
+                    <h3>Card 3</h3>
+                    <p>Contenido de la tercera tarjeta.</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer id="footer" class="footer">
+            <p>&copy; 2024 Ejemplo de Sticky Footer</p>
+        </footer>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuList = document.getElementById('menu-list');
+
+        menuToggle.addEventListener('click', () => {
+            menuList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo 2: Layout con grid-column y grid-row</title>
+  <style>
+    /* 
+      Layout:
+      - 4 columnas (flexibles)
+      - 3 filas: 
+          1) header de 60px de alto
+          2) contenido flexible
+          3) footer de 40px
+    */
+    .layout {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 60px 1fr 40px;
+      gap: 10px;
+      margin: 20px;
+    }
+
+    /* Header abarca las 4 columnas (líneas 1 a 5 => 4 columnas + 1 = 5 líneas) 
+       y ocupa la primera fila (líneas 1 a 2)
+    */
+    .header {
+      grid-column: 1 / 5; 
+      grid-row: 1 / 2;
+      background-color: #a3daff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Sidebar: 
+       - Ocupa solo la primera columna en la segunda fila => (col 1 a 2)
+       - Ocupa la segunda fila => (row 2 a 3)
+    */
+    .sidebar {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      background-color: #ffd98f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Main: 
+       - Ocupa columnas de la línea 2 a la 5 => 3 columnas
+       - Ocupa la segunda fila => (row 2 a 3)
+    */
+    .main {
+      grid-column: 2 / 5;
+      grid-row: 2 / 3;
+      background-color: #fff3cd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Footer:
+       - Ocupa las 4 columnas (col 1 a 5)
+       - Ocupa la tercera fila => (row 3 a 4)
+    */
+    .footer {
+      grid-column: 1 / 5;
+      grid-row: 3 / 4;
+      background-color: #d1ecf1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Estilos generales para el contenido */
+    .layout > * {
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ejemplo 2: Layout con Header, Sidebar, Main y Footer</h1>
+  <div class="layout">
+    <header class="header">Header</header>
+    <aside class="sidebar">Sidebar</aside>
+    <main class="main">Main content</main>
+    <footer class="footer">Footer</footer>
+  </div>
+</body>
+</html>

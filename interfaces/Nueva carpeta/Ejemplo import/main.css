@@ -1,0 +1,21 @@
+/* Archivo: styles/main.css */
+
+/* Importamos los estilos base (generales) */
+@import url('base.css');
+
+/* Importamos estilos para escritorio */
+@import url('desktop.css') screen and (min-width: 1025px);
+
+/* Importamos estilos para tablet */
+@import url('tablet.css') screen and (min-width: 768px) and (max-width: 1024px);
+
+/* Importamos estilos para móvil */
+@import url('mobile.css') screen and (max-width: 767px);
+
+/* Importamos estilos para impresión */
+@import url('print.css') print;
+
+/* Estilos adicionales pueden ir aquí */
+body {
+    /* Estilos generales adicionales */
+}

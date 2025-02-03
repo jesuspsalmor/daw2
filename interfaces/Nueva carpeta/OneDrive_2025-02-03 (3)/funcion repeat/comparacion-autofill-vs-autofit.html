@@ -1,0 +1,55 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container-auto-fill {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+            background-color: #ecf0f1;
+          }
+          .container-auto-fit {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+            background-color: #ecf0f1;
+          }
+          .grid-item {
+            background-color: #3498db;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+          }          
+
+    </style>
+</head>
+<body>
+    <h2>Usando `auto-fill`</h2>
+    <div class="container-auto-fill">
+      <div class="grid-item">Elemento 1</div>
+      <div class="grid-item">Elemento 2</div>
+      <div class="grid-item">Elemento 3</div>
+      <div class="grid-item">Elemento 4</div>
+    </div>
+    
+    <h2>Usando `auto-fit`</h2>
+    <div class="container-auto-fit">
+      <div class="grid-item">Elemento 1</div>
+      <div class="grid-item">Elemento 2</div>
+      <div class="grid-item">Elemento 3</div>
+      <div class="grid-item">Elemento 4</div>
+    </div>
+    
+</body>
+</html>

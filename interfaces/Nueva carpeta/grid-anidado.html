@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Grid Anidado</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .grid-principal {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "nav nav"
+                "contenido aside"
+                "footer footer";
+            grid-template-columns: 1fr 200px;
+            grid-template-rows: 60px 50px 1fr 40px;
+            height: 100vh;
+            gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Estilos para las áreas principales */
+        .header {
+            grid-area: header;
+            background-color: #4CAF50;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            border-radius: 4px;
+        }
+
+        .nav {
+            grid-area: nav;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            border-radius: 4px;
+        }
+
+        .nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .contenido {
+            grid-area: contenido;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: auto;
+        }
+
+        .aside {
+            grid-area: aside;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        /* Estilos para la cuadrícula anidada */
+        .grid-anidado {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .grid-anidado .item {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 1.2em;
+        }
+
+        /* Estilos para la segunda cuadrícula anidada */
+        .grid-anidado-dos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .grid-anidado-dos .item-dos {
+            background-color: #FF5722;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .grid-principal {
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "contenido"
+                    "aside"
+                    "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: 60px 50px 1fr 200px 40px;
+            }
+
+            .grid-anidado {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-anidado {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav a {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-principal">
+        <header class="header">Encabezado</header>
+        <nav class="nav">
+            <a href="#">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <section class="contenido">
+            <h2>Contenido Principal</h2>
+            <div class="grid-anidado">
+                <div class="item">A1</div>
+                <div class="item">A2</div>
+                <div class="item">A3</div>
+                <div class="item">
+                    <div>
+                        <h3>Subsección</h3>
+                        <div class="grid-anidado-dos">
+                            <div class="item-dos">B1</div>
+                            <div class="item-dos">B2</div>
+                            <div class="item-dos">B3</div>
+                            <div class="item-dos">B4</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">A5</div>
+                <div class="item">A6</div>
+            </div>
+        </section>
+        <aside class="aside">
+            <h3>Barra Lateral</h3>
+            <p>Información adicional o enlaces relevantes.</p>
+        </aside>
+        <footer class="footer">Pie de Página</footer>
+    </div>
+</body>
+</html>

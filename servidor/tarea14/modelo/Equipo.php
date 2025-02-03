@@ -29,5 +29,5 @@ class Equipo{
     protected function setcodEquipo($codEquipo){
         $this->codEquipo=$codEquipo;
     }
-
+    
 }

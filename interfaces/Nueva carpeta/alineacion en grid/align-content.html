@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de CSS Grid: align-content</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #444;
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Etiquetas descriptivas */
+        .description {
+            text-align: center;
+            margin-bottom: 15px;
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Estilos del Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 120px);
+            grid-template-rows: repeat(2, 120px);
+            gap: 15px;
+            background-color: #ffe4e1; /* Rosa suave */
+            padding: 20px;          
+            border: 2px solid #ccc;
+            margin: 20px auto;
+            height: 500px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        /* Estilos de los ítems del Grid */
+        .grid-item {
+            background-color: #87cefa; /* Azul suave */
+            color: #fff;
+            display: flex;
+            align-items: center; /* Centra verticalmente el contenido dentro del ítem */
+            justify-content: center; /* Centra horizontalmente el contenido dentro del ítem */
+            font-size: 24px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        /* Ejemplos con diferentes valores de align-content */
+        .align-content-start {
+            align-content: start; /* Alinea los grid tracks al inicio del contenedor */
+            background-color: #ffe4e1; /* Rosa suave */
+        }
+
+        .align-content-center {
+            align-content: center; /* Centra los grid tracks verticalmente en el contenedor */
+            background-color: #e6ffe6; /* Verde muy suave */
+        }
+
+        .align-content-end {
+            align-content: end; /* Alinea los grid tracks al final del contenedor */
+            background-color: #e6f7ff; /* Azul claro */
+        }
+
+        .align-content-stretch {
+            align-content: stretch; /* Estira los grid tracks para llenar el contenedor */
+            background-color: #fff0f5; /* Lavanda pálido */
+        }
+
+        .align-content-space-between {
+            align-content: space-between; /* Distribuye los grid tracks con espacios iguales entre ellos */
+            background-color: #fffacd; /* Amarillo pálido */
+        }
+
+        .align-content-space-around {
+            align-content: space-around; /* Distribuye los grid tracks con espacios iguales alrededor de ellos */
+            background-color: #f0e68c; /* Khaki suave */
+        }
+
+        .align-content-space-evenly {
+            align-content: space-evenly; /* Distribuye los grid tracks con espacios iguales entre ellos y los bordes del contenedor */
+            background-color: #add8e6; /* Azul claro */
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de CSS Grid: align-content</h1>
+
+    <!-- Grid con align-content: start -->
+    <section>
+        <h2>align-content: start</h2>
+        <p class="description">Alinea los grid tracks al inicio del eje vertical.</p>
+        <div class="grid-container align-content-start">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+        </div>
+    </section>
+
+    <!-- Grid con align-content: center -->
+    <section>
+        <h2>align-content: center</h2>
+        <p class="description">Centra los grid tracks verticalmente en el contenedor.</p>
+        <div class="grid-container align-content-center">
+            <div class="grid-item">A</div>
+            <div class="grid-item">B</div>
+            <div class="grid-item">C</div>
+            <div class="grid-item">D</div>
+        </div>
+    </section>
+
+    <!-- Grid con align-content: end -->
+    <section>
+        <h2>align-content: end</h2>
+        <p class="description">Alinea los grid tracks al final del eje vertical.</p>
+        <div class="grid-container align-content-end">
+            <div class="grid-item">I</div>
+            <div class="grid-item">II</div>
+            <div class="grid-item">III</div>
+            <div class="grid-item">IV</div>
+        </div>
+    </section>
+
+    <!-- Grid con align-content: stretch -->
+    <section>
+        <h2>align-content: stretch</h2>
+        <p class="description">Estira los grid tracks para llenar el contenedor verticalmente.</p>
+        <div class="grid-container align-content-stretch">
+            <div class="grid-item">Alpha</div>
+            <div class="grid-item">Beta</div>
+            <div class="grid-item">Gamma</div>
+            <div class="grid-item">Delta</div>
+        </div>
+    </section>
+
+    <!-- Grid con align-content: space-between -->
+    <section>
+        <h2>align-content: space-between</h2>
+        <p class="description">Distribuye los grid tracks con espacios iguales entre ellos.</p>
+        <div class="grid-container align-content-space-between">
+            <div class="grid-item">X</div>
+            <div class="grid-item">Y</div>
+            <div class="grid-item">Z</div>
+            <div class="grid-item">W</div>
+        </div>
+    </section>
+
+    <!-- Grid con align-content: space-around -->
+    <section>
+        <h2>align-content: space-around</h2>
+        <p class="description">Distribuye los grid tracks con espacios iguales alrededor de ellos.</p>
+        <div class="grid-container align-content-space-around">
+            <div class="grid-item">Uno</div>
+            <div class="grid-item">Dos</div>
+            <div class="grid-item">Tres</div>
+            <div class="grid-item">Cuatro</div>
+        </div>
+    </section>
+
+    <!-- Grid con align-content: space-evenly -->
+    <section>
+        <h2>align-content: space-evenly</h2>
+        <p class="description">Distribuye los grid tracks con espacios iguales entre ellos y los bordes del contenedor.</p>
+        <div class="grid-container align-content-space-evenly">
+            <div class="grid-item">A</div>
+            <div class="grid-item">B</div>
+            <div class="grid-item">C</div>
+            <div class="grid-item">D</div>
+        </div>
+    </section>
+</body>
+</html>

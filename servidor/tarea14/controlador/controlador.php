@@ -1,6 +1,6 @@
 <?php
 
-class Controller{
+class Controlador{
     public function __call($name, $arguments) {
         $this->sendOutput('', array("HTTP/1.1 400 BAD REQUEST"));
     }
@@ -35,3 +35,4 @@ class Controller{
         echo $data;
         exit;
     }
+}
