@@ -1,12 +1,12 @@
 <?php
 //GET
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "http://localhost/daw2/servidor/tarea14/api/jugadores");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$res = curl_exec($ch);
-print_r($res);
-curl_close($ch);
+// $ch = curl_init();
+// curl_setopt($ch, CURLOPT_URL, "http://localhost/daw2/servidor/tarea14/api/jugadores");
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// $res = curl_exec($ch);
+// print_r($res);
+// curl_close($ch);
 
 //POST
 // $ch = curl_init();

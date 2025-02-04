@@ -22,6 +22,7 @@ switch ($uri[2]) {
         break;
     
     default:
+    echo 'URI en default: ' . htmlspecialchars($uri[3]);
         require_once VIEWS.'/404.php';
         break;
 }

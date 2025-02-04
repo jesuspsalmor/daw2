@@ -1,8 +1,5 @@
 <?php
-DEFINE("IP", "localhost");
-DEFINE("USER", "root");
-DEFINE("PASS", "");
-DEFINE("DB", "mvc");
+
 
 
 DEFINE("BASE_PATH", __DIR__."/../");
