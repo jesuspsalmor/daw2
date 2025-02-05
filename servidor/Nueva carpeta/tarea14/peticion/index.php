@@ -26,32 +26,32 @@
 //  curl_close($ch);
 
 //Post jugador
-// $ch = curl_init();
-// $fields = array(
+//  $ch = curl_init();
+//   $fields = array(
 //     'codEquipo' => '1',
-//     'nombre' => 'Juanjopoooo',
-//     'posicion' => 'Defensa',
-//     'sueldo' => '50000'
-// );
-// $data_string = json_encode($fields);
+//      'nombre' => 'Jesugolea',
+//       'posicion' => 'Defensa',
+//       'sueldo' => '522252'
+//   );
+//   $data_string = json_encode($fields);
 
-// curl_setopt($ch, CURLOPT_URL, "http://localhost/tarea14/api/jugadores");
-// curl_setopt($ch, CURLOPT_POST, 1);
-// curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
-// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Obtener la respuesta como string
-// curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-//     'Content-Type: application/json',
-//     'Content-Length: ' . strlen($data_string)
-// ));
+//   curl_setopt($ch, CURLOPT_URL, "http://localhost/tarea14/api/jugadores");
+//   curl_setopt($ch, CURLOPT_POST, 1);
+//   curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+//   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Obtener la respuesta como string
+//   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+//       'Content-Type: application/json',
+//      'Content-Length: ' . strlen($data_string)
+//   ));
 
-// $res = curl_exec($ch);
-// if ($res === false) {
-//     echo 'Error: ' . curl_error($ch);
-// } else {
-//     echo 'Respuesta: ' . $res;
-// }
+//  $res = curl_exec($ch);
+//   if ($res === false) {
+//       echo 'Error: ' . curl_error($ch);
+//  } else {
+//       echo 'Respuesta: ' . $res;
+//   }
 
-// curl_close($ch);
+//  curl_close($ch);
 
 //put jugador
 // $ch = curl_init();
@@ -101,12 +101,12 @@
 
 
 //get equipos
-//   $ch = curl_init();
-//   curl_setopt($ch, CURLOPT_URL, "http://localhost/tarea14/api/equipos");
+//    $ch = curl_init();
+//  curl_setopt($ch, CURLOPT_URL, "http://localhost/tarea14/api/equipos");
 //  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 //   $res = curl_exec($ch);
 //   print_r($res);
-//  curl_close($ch);
+//   curl_close($ch);
 
 //get quipo por id
 // $ch = curl_init();

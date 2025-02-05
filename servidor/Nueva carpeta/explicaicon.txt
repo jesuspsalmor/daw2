@@ -1,0 +1,1 @@
+la base de datos no se crea sola hay que usar el sql. 
