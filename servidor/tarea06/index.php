@@ -14,8 +14,35 @@ c. Goles en contra -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+
+    <style>
+        .body{
+            display=flex;
+        }
+    .table {
+        border: 1px solid lightgray;
+        border-collapse: collapse;
+    }
+    .table th, .table td {
+        border: 1px solid lightgray;
+        text-align: center;
+    }
+    .resultado {
+        background-color: green;
+    }
+    .rojas {
+        background-color: red;
+    }
+    .amarillas {
+        background-color: yellow;
+    }
+    .penaltis{
+        background-color: orange;
+    }
+    </style>
 </head>
-<body>
+<body class="body">
 <?php
 $partidos = array(
     "Zamora" => array(
@@ -101,22 +128,30 @@ $partidos = array(
 );
 
 function mostrarTabla($partidos) {
-    echo "<table border='1'>";
-    echo "<tr><th>Equipo Local</th><th>Equipo Visitante</th><th>Resultado</th><th>Rojas</th><th>Amarillas</th><th>Penaltis</th></tr>";
+    $html = "<table class='table' >";
+    $html .= "<tr><th class='rojas'>Equipos</th><th>Zamora</th><th>Salamanca</th><th>Avila</th><th>Valladolid</th></tr>";
     foreach ($partidos as $equipoLocal => $juegos) {
-        foreach ($juegos as $equipoVisitante => $detalles) {
-            echo "<tr>";
-            echo "<td>$equipoLocal</td>";
-            echo "<td>$equipoVisitante</td>";
-            echo "<td>{$detalles['resultado']}</td>";
-            echo "<td>{$detalles['roja']}</td>";
-            echo "<td>{$detalles['amarilla']}</td>";
-            echo "<td>{$detalles['penalti']}</td>";
-            echo "</tr>";
+        $html .= "<tr>";
+        $html .= "<td>$equipoLocal</td>";
+        foreach (array("Zamora", "Salamanca", "Avila", "Valladolid") as $equipoVisitante) {
+            if ($equipoLocal === $equipoVisitante) {
+                $html .= "<td></td>";
+            } else {
+                $detalles = $juegos[$equipoVisitante];
+                $html .= "<td>";
+                $html .= "<span class='resultado'>{$detalles['resultado']} </span><br>";
+                $html .= "<span class='rojas'>{$detalles['roja']}</span> ";
+                $html .= "<span class='amarillas'>{$detalles['amarilla']}</span> ";
+                $html .= "<span class='penaltis'> {$detalles['penalti']}</span>";
+                $html .= "</td>";
+            }
         }
+        $html .= "</tr>";
     }
-    echo "</table>";
+    $html .= "</table>";
+    echo $html;
 }
+
 
 function calcularPuntos($partidos) {
     $clasificacion = array();
@@ -154,7 +189,7 @@ function calcularPuntos($partidos) {
 }
 
 function mostrarClasificacion($clasificacion) {
-    echo "<table border='1'>";
+    echo "<table class='table'>";
     echo "<tr><th>Equipo</th><th>Puntos</th><th>Goles a Favor</th><th>Goles en Contra</th></tr>";
     foreach ($clasificacion as $equipo => $detalles) {
         echo "<tr>";
