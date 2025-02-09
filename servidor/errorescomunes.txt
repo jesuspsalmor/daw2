@@ -1,0 +1,50 @@
+200 OK: La solicitud ha tenido éxito. La respuesta depende del método HTTP utilizado:
+
+GET: El recurso ha sido recuperado y se transmite en el cuerpo del mensaje.
+
+POST: La descripción del resultado de la acción.
+
+HEAD: Los encabezados están en el cuerpo sin ningún contenido.
+
+PUT o DELETE: El recurso ha sido creado o modificado con éxito.
+
+201 Created: La solicitud ha tenido éxito y se ha creado un nuevo recurso como resultado. Este es típico de respuestas a solicitudes POST.
+
+202 Accepted: La solicitud ha sido aceptada para procesamiento, pero el procesamiento no ha sido completado. Es útil en operaciones asíncronas y permite diferenciar entre el éxito de la solicitud y el procesamiento pendiente.
+
+204 No Content: La solicitud ha tenido éxito, pero no hay contenido que devolver. A menudo se utiliza como respuesta a operaciones DELETE o PUT que no necesitan proporcionar un contenido adicional.
+
+206 Partial Content: La solicitud GET ha tenido éxito y el cuerpo contiene una porción del recurso. Se utiliza cuando solo se quiere transmitir una parte del recurso, generalmente en transferencias de archivos grandes o descargas de contenido multimedia.
+
+207 Multi-Status (WebDAV): Proporciona información sobre múltiples recursos en situaciones en las que una operación múltiple (como PROPFIND o PROPPATCH) puede resultar en múltiples estados.
+1. Códigos de Estado 4xx (Errores del Cliente)
+400 - Bad Request: El servidor no puede procesar la solicitud debido a un error de sintaxis, una solicitud inválida o un formato incorrecto.
+
+401 - Unauthorized: La solicitud no se ha aplicado porque falta la autenticación válida para el recurso de destino.
+
+403 - Forbidden: El servidor entendió la solicitud pero se niega a autorizarla.
+
+404 - Not Found: El servidor no encontró una representación actual del recurso solicitado.
+
+405 - Method Not Allowed: El método HTTP utilizado en la solicitud no es compatible con el servidor.
+
+406 - Not Acceptable: El recurso solicitado no puede cumplir con los encabezados Accept del cliente.
+
+408 - Request Timeout: El cliente tardó demasiado en enviar la solicitud.
+
+409 - Conflict: La solicitud no se pudo completar debido a un conflicto con el estado actual del recurso.
+
+410 - Gone: El recurso solicitado ya no está disponible y no se ha encontrado una nueva ubicación.
+
+411 - Length Required: El servidor requiere que el cliente especifique el tamaño del contenido en la solicitud.
+
+2. Códigos de Estado 5xx (Errores del Servidor)
+500 - Internal Server Error: El servidor encontró una condición inesperada que impidió el procesamiento de la solicitud.
+
+501 - Not Implemented: El servidor no implementa la funcionalidad necesaria para cumplir con la solicitud.
+
+502 - Bad Gateway: El servidor actuó como un puente o proxy y recibió una respuesta inválida del servidor de origen.
+
+503 - Service Unavailable: El servidor no está disponible temporalmente (por ejemplo, debido a mantenimiento).
+
+504 - Gateway Timeout: El servidor actuó como un puente o proxy y no recibió una respuesta dentro del tiempo de espera.
