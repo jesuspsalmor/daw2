@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +7,22 @@
     <link rel="shortcut icon" href="./imagenes/logo sein sin sein.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/largeStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- 
+    <link rel="stylesheet" href="./css/smallStyle.css" media="only screen and (max-width: 600px)">
 </head>
 <body>
+
     <header>
-       
-        <div class="logo">
-            <img src="./imagenes/logo sein sana copia.png" alt="">
+        <div class="superior">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="Icons_default-icon CallUsMessage_icon" fill="currentColor" aria-hidden="true">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                <span>¿Preguntas? Llámenos +34 843999434</span>
         </div>
-        <div class="buscador">
-            
+        <div class="inferior">
+            <div class="logo">
+                <img src="./imagenes/sein copia blanco.png" alt="">
+            </div>
+            <div class="buscadorMenu">
+              <div class="buscador">
                 <form name="buscador" class="form-buscador">
                     <input type="text" name="buscador" id="input-buscador"> 
                     <button id="boton-buscar" type="submit" class="Search_submit font-size-regular" aria-label="Buscar productos">
@@ -25,43 +31,312 @@
                         </svg>
                     </button>
                 </form>
+              </div>
+              <div class="menu">
+                <div>
+                    <button class="iconoMenu"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="Icons_default-icon MobileNav_opener-icon" fill="currentColor" aria-hidden="true">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div>
+                    <ul class="listaMenu">
+                        <li>SEIN</li>
+                        <li>Catálago</li>
+                        <li>Servicios</li>
+                        <li>Ofertas</li>
+                        
+                        <li>Blog</li>
+                       
+                        <li>Contacto</li>
+                    </ul>
+                </div>
+            </div>
+              </div> 
+              <div class="derecha">
+                <div class="usuario">
+                    <svg  class="iconoUsuario" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="Icons_default-icon AccountMenu_icon AccountMenu-icon_1bpunu17g AccountMenu_user-icon" fill="currentColor" aria-hidden="true">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                       </svg>
+                       <p class="letreroUsuario">Iniciar sesion</p>
+                       <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <div class="login">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="Icons_default-icon Summary_icon" fill="currentColor" aria-hidden="true">
+                        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"></path>
+                        </svg>
+                        <p>0 Productos</p>
+                </div>
+                <div class="certificacion">
+                    <img src="./imagenes/iso 9001.png" alt="">
+                </div>
+            </div> 
+            </div>
         
         </div>
-        <div class="usuario">
-           
-             <svg  class="iconoUsuario" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="Icons_default-icon AccountMenu_icon AccountMenu-icon_1bpunu17g AccountMenu_user-icon" fill="currentColor" aria-hidden="true">
-             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
-            </svg>
-            <p class="letreroUsuario">Iniciar sesion</p>
-            <i class="fa-solid fa-caret-down"></i>
+    </header>
+    <main>
+        <section class="hsr">
+            <div class="herramientas">
+                <div class="contenerdorimagen">
+                <img src="./imagenes/herramientas 2.jpg" alt="">
+                <div class="superpuestoimagen">
+                    <p >HERRAMIENTAS</p>
+                    <p>Los del catálogo y muchos más: Estocamos lo crítico, buscamos lo puntual.</p>
+                    <p><button>ver más</button></p>
+                </div> 
+            </div>
         </div>
-        <div class="carrito">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="Icons_default-icon Summary_icon" fill="currentColor" aria-hidden="true">
-            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"></path>
-            </svg>
-            <p>0 Productos</p>
-        </div>
-        <div class="menu">
-            <button class="iconoMenu"> 
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="Icons_default-icon MobileNav_opener-icon" fill="currentColor" aria-hidden="true">
-                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
-                </svg>
-            </button>
-            <div>
-                <ul class="listaMenu">
-                    <li>SEIN</li>
-                    <li>Catálago</li>
-                    <li>Servicios</li>
-                    <li>Ofertas</li>
-                    <li>Marcas</li>
-                    <li>Blog</li>
-                    <li>Ayuda/FAQ</li>
+            <div class="servicios">
+                <div class="contenerdorimagen">
+                <img src="./imagenes/banne-higiene opacidad.jpg" alt="">
+                <div class="superpuestoimagen">
+                    <p >SERVICIOS</p>
+                    <p>Soluciones para LEAN Manufacturing y Tools Management.</p>
+                    <p><button>ver más</button></p>
+                </div> 
+                </div>
+            </div>
+            <div class="resultados">
+                <div class="contenerdorimagen">
+                <img src="./imagenes/resultados web opacidad.jpg" alt="">
+                <div class="superpuestoimagen">
+                    <p >RESULTADOS</p>
+                    <p>Ahorro y mejora en costes de gestión, producción y almacén.</p>
+                    <p><button>ver más</button></p>
+                </div> 
+                </div>
+            </div>
+        </section>
+        <section class="slidermarcas">
+            <div class="marcas">
+                <div><img src="./imagenes/logo 3m web 7.jpg" alt=""></div>
+                <div><img src="./imagenes/logo bosch web.jpg" alt=""></div>
+                <div><img src="./imagenes/logo facom web.jpg" alt=""></div>
+                <div><img src="./imagenes/logo guhring web.jpg" alt=""></div>
+                <div><img src="./imagenes/logo izar web.jpg" alt=""></div>
+                <div><img src="./imagenes/logo loctite web.jpg" alt=""></div>
+                <div><img src="./imagenes/logo pferd web.jpg" alt=""></div>
+
+
+            </div>
+        </section>
+        <section class="categoriasProductos">
+            <div class="tituloproductos">Categorías de productos</div>
+            <div class="enlacescategorias">
+                <div class="columna">
+                    <div>Herramienta de Mano y Medición</div>
+                    <div>Herramienta de Corte y Sujeción</div>
+                    <div>Transmisión y Rodamientos</div>
+                    <div>Seguridad e Higiene</div>
+                </div>
+                <div class="columna">
+                    <div>Lubricantes, Pinturas y Adhesivos</div>
+                    <div>Neumática, Hidráulica y Fluidos</div>
+                    <div>Elevación y Transporte</div>
+                    <div>Abrasivos</div>
+                </div>
+                <div class="columna">
+                   
+                        <div> Maquinas Portátiles, Auxiliares y Accesorios</div>
+                        <div>Clasificación, Almacenaje y Embalaje</div>
+                        <div>Matricería y Troquelaje</div>
+                        <div>Tornillería y Anclaje</div>
+                    
+                </div>
+            </div>
+        </section>
+        <section class="recomendaciones">
+            <div class="titulorecomendaciones">Nuestras recomendaciones</div>
+            <div class="sliderrecomendaciones">
+                <div class="tarjetacompra">
+                    <img src="./imagenes/103m7000071736_0.png" alt="">
+                    <p class="nombreproduco">cinta buena</p>
+                    <p class="idproducto">123123123123</p>
+                    <p class="precio">232€</p>
+                    <div class="selector">
+                        <div class="selectoropcion">-</div>
+                        <div class="selectorcantidad">1</div>
+                        <div class="selectoropcion">+</div>
+                    </div>
+                    <div class="botonañadir">Añadir a la cesta</div>
+                </div>
+                <div class="tarjetacompra">
+                    <img src="./imagenes/10losf7063400_0.png" alt="">
+                    <p class="nombreproduco">spray bueno</p>
+                    <p class="idproducto">123123123123</p>
+                    <p class="precio">232€</p>
+                    <div class="selector">
+                        <div class="selectoropcion">-</div>
+                        <div class="selectorcantidad">1</div>
+                        <div class="selectoropcion">+</div>
+                    </div>
+                    <div class="botonañadir">Añadir a la cesta</div>
+                </div>
+                <div class="tarjetacompra">
+                    <img src="./imagenes/113m7000038203_0.jpeg" alt="">
+                    <p class="nombreproduco">pastilitas</p>
+                    <p class="idproducto">123123123123</p>
+                    <p class="precio">232€</p>
+                    <div class="selector">
+                        <div class="selectoropcion">-</div>
+                        <div class="selectorcantidad">1</div>
+                        <div class="selectoropcion">+</div>
+                    </div>
+                    <div class="botonañadir">Añadir a la cesta</div>
+                </div>
+                <div class="tarjetacompra">
+                    <img src="./imagenes/16em152323_0.png" alt="">
+                    <p class="nombreproduco">aceite</p>
+                    <p class="idproducto">123123123123</p>
+                    <p class="precio">232€</p>
+                    <div class="selector">
+                        <div class="selectoropcion">-</div>
+                        <div class="selectorcantidad">1</div>
+                        <div class="selectoropcion">+</div>
+                    </div>
+                    <div class="botonañadir">Añadir a la cesta</div>
+                </div> 
+            </div>
+        </section>
+        <section class="porque">
+            <div class="textoporque">
+                <div class="tituloporque">¿Por qué SEIN?</div>
+                <div class="textoporque">"Porque combinamos lo mejor de las multinacionales en productos y servicios con la flexibilidad y el trato personalizado de un colaborador cercano. Nuestra proximidad y experiencia nos permiten ofrecer la solución más apropiada para cada necesidad"</div>
+                <div><button>Ver más</button></div>
+            </div>
+            <div class="imagenporque"><img src="./imagenes/jundiz.jpg" alt=""></div>
+        </section>
+        <section class="recomendaciones">
+           <div class="titulorecomendaciones">Los más vendidos</div> 
+           <div class="sliderrecomendaciones">
+            <div class="tarjetacompra">
+                <img src="./imagenes/103m7000071736_0.png" alt="">
+                <p class="nombreproduco">cinta buena</p>
+                <p class="idproducto">123123123123</p>
+                <p class="precio">232€</p>
+                <div class="selector">
+                    <div class="selectoropcion">-</div>
+                    <div class="selectorcantidad">1</div>
+                    <div class="selectoropcion">+</div>
+                </div>
+                <div class="botonañadir">Añadir a la cesta</div>
+            </div>
+            <div class="tarjetacompra">
+                <img src="./imagenes/10losf7063400_0.png" alt="">
+                <p class="nombreproduco">spray bueno</p>
+                <p class="idproducto">123123123123</p>
+                <p class="precio">232€</p>
+                <div class="selector">
+                    <div class="selectoropcion">-</div>
+                    <div class="selectorcantidad">1</div>
+                    <div class="selectoropcion">+</div>
+                </div>
+                <div class="botonañadir">Añadir a la cesta</div>
+            </div>
+            <div class="tarjetacompra">
+                <img src="./imagenes/113m7000038203_0.jpeg" alt="">
+                <p class="nombreproduco">pastilitas</p>
+                <p class="idproducto">123123123123</p>
+                <p class="precio">232€</p>
+                <div class="selector">
+                    <div class="selectoropcion">-</div>
+                    <div class="selectorcantidad">1</div>
+                    <div class="selectoropcion">+</div>
+                </div>
+                <div class="botonañadir">Añadir a la cesta</div>
+            </div>
+            <div class="tarjetacompra">
+                <img src="./imagenes/16em152323_0.png" alt="">
+                <p class="nombreproduco">aceite</p>
+                <p class="idproducto">123123123123</p>
+                <p class="precio">232€</p>
+                <div class="selector">
+                    <div class="selectoropcion">-</div>
+                    <div class="selectorcantidad">1</div>
+                    <div class="selectoropcion">+</div>
+                </div>
+                <div class="botonañadir">Añadir a la cesta</div>
+            </div> 
+           </div>
+        </section>
+        <section class="primerasmarcas">
+            <div class="titulomarcas">Primeras marcas</div>
+            <div class="imgprimerasmarcas">
+                <div><img src="./imagenes/henkel loctite con logo.jpg" alt=""></div>
+                <div><img src="./imagenes/mobil shc avión.jpg" alt=""></div>
+                <div><img src="./imagenes/ternua workwear web logoarekin.jpg" alt=""></div>
+            </div>
+        </section>
+        <section class="iso">
+            <div class="textoiso">
+                <div class="tituloiso">Certificado de Calidad ISO 9001</div>
+                <div>En SEIN, somos consciente de la importancia de satisfacer las expectativas y necesidades de nuestra clientela en armonía con el objetivo de satisfacción de la propiedad que nos apoya, a partir de la calidad de productos y servicios que ofrecemos, así como de que la clientela aprecie el esfuerzo de todo nuestro equipo. Para lograr dicho objetivo, SEIN debe funcionar como un solo ente, perfectamente engranado, con un personal adecuadamente cualificado y motivado.</div>
+            </div>
+            <div class="logoiso"><img src="./imagenes/9001_enac_cast.jpg" alt=""></div>
+            <div class="textois2">Eusko Jaurlaritzak eta Europar Batasunak 2014-2020 Eskualde Garapenerako Europar Funtsaren (EGEF) bitartez konfinantzatutako eragiketa.
+
+                Actuación cofinanciada por el Gobierno Vasco y La Unión Europea a través del Fondo Europeo de Desarrollo Regional 2014-2020 (FEDER)</div>
+            <div class="logoseu"><img src="./imagenes/cartel feder. feder kartela.png" alt=""></div>
+        </section>
+    </main>
+    <footer>
+    <div class="footersuperior">
+        <div class="footersein">
+            <div class="titulofooter">SEIN</div>
+            <div class="opcionesfooter">
+                <ul>
+                    <li>¿Por qué SEIN?</li>
+                    <li>Servicios industriales</li>
+                    <li>Política de calidad</li>
                     <li>Contacto</li>
                 </ul>
             </div>
         </div>
-        <div class="contacto"></div>
-    </header>
-    
+        <div class="footerservicion">
+            <div class="titulofooter">Servicios que ofrecemos</div>
+            <div class="opcionesfooter">
+                <ul>
+                    <li>Gestión flexible de almacenes y MROs</li>
+                    <li>E-shop personalizado</li>
+                    <li>Catálogo PunchOut</li>
+                    <li>Revisión, certificación y fabricación de elementos de elevación</li>
+                    <li>Mobiliario industrial a medida</li>
+                    <li>Asesoramiento técnico de las mejores marcas</li>
+                    <li>Diseño y fabricación de herramientas a medida</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subcribir">
+            <div class="titulofooter">Suscríbete al boletín de noticias.</div>
+            <input type="text">
+            <button>Suscribirse</button>
+        </div>
+        <div class="certificado">
+            <div class="titulofooter">Certificado de Calidad ISO 9001</div>
+            <div><img src="./imagenes/cartel feder. feder kartela.png" alt=""></div>
+        </div>
+    </div>
+    <div class="footerinferior">
+        <div><span>© Copyright 2025 SEIN Herramientas. Servicios. Resultados. All rights reserved</span></div>
+        <div>
+            <ul class="listafoteerinf">
+                <li><a>¿Por qué SEIN?</a></li>
+                <li><a>Catálogo</a></li>
+                <li><a>Aviso legal</a></li>
+                <li><a >Política de privacidad</a></li>
+                <li><a>Política de cookies</a></li>
+
+                <li><a href="/contact-us">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+    </footer>
+    <script>document.querySelector('.iconoMenu').addEventListener('click', function() {
+        const menu = document.querySelector('.listaMenu');
+        menu.classList.toggle('active');
+     });
+     </script>
 </body>
 </html>

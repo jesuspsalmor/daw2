@@ -1,0 +1,126 @@
+/* Estilos generales */
+body {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .header, .footer, .main-content {
+    padding: 10px;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .container {
+    display: block;
+    width: 100%;
+  }
+  
+  .navbar {
+    flex-direction: column;
+  }
+  
+  .navbar a {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .superior, .inferior, .derecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .buscadorMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Posicionamos el iconoMenu */
+  }
+  
+  .iconoMenu {
+    position: absolute;
+    top: -10px; /* Ajusta según sea necesario */
+    right: 0; /* Pega el iconoMenu a la derecha */
+  }
+  
+  .listaMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .iconoMenu {
+      display: flex;
+      top: -10px; /* Asegúrate de que el valor esté ajustado correctamente */
+      right: -100px; /* Ajusta según sea necesario */
+    }
+  
+    .listaMenu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .listaMenu.active {
+      display: flex;
+    }
+    .hsr{
+        display: block;
+        height: auto;
+    }
+    .categoriasProductos{
+        height: auto;
+    }
+    .enlacescategorias{
+        display: block;
+        
+        margin: 5ch;
+    }
+    .columna{
+        margin-top: 2vh;
+    }
+    .recomenciones{
+        display: block;
+    }
+    .sliderrecomendaciones{
+        display: block;
+
+    }
+    .recomendaciones{
+        height: auto;
+        margin: 2vh;
+    }
+    .tarjetacompra{
+        width: 80%;
+    }
+    .porque{
+        display: block;
+    }
+    .primerasmarcas{
+        display: block;
+    }
+    .imgprimerasmarcas{
+        display: block;
+       
+    }
+    .imgprimerasmarcas div{
+        margin-top: 2vh;
+       
+    }
+    .iso{
+        display: block;
+        height: auto;
+    }
+    .footer{
+        display: block;
+        height: auto;
+    }
+    .footerservicion{
+        display: none;
+    }
+  }
+  

@@ -1,98 +1,407 @@
- header{
-    height: 10%;
-    display: grid;
-    grid-template-areas: "logo buscador usuario carrito"
-                            "menuu menuu contacto contacto" ;
-    grid-template-columns: 2fr 4fr 2fr 2fr;
-    grid-template-rows: 3fr 1fr;
-   
- }
- .logo{
-
-   grid-area: logo;
-
-   justify-self: center;
- }
- .buscador{
-   grid-area: buscador;
-
-   align-content:center;
+body{
    margin: 0;
-   padding: 0;
- }
+}
+.inferior {
+  height: 15vh;
+   background-color: #0A330F; 
+   color: white; 
+   display: grid; 
+   grid-template-columns: 1fr 5fr 3fr;
+   align-items: center; 
+   padding: 0 20px;
+}
+.buscadorMenu{
+   grid-template-columns: 1fr 1fr;
+}
+.form-buscador {
+   width: 100%; /* Ocupa todo el espacio disponible */
+   display: flex; /* Usar flexbox para el formulario */
+   border: grey 2px solid; /* Borde gris */
+   border-radius: 5px; /* Bordes redondeados */
+}
 
- .form-buscador{
-   min-width: 200px;
-   border: green 1px solid;
-   height: 30%;
-   display: flex;
-   flex-wrap: nowrap;
-   justify-items: flex-end;
-
-   
- }
- #input-buscador{
-  height: auto;
-   padding: 0;
+#input-buscador {
+   background-color: aliceblue;
+   flex-grow: 1; /* Permite que el input crezca */
+   padding: 5px; /* Añadir padding */
    margin: 0;
-   width: 90%;
    border: none;
-   padding-block: 0;
-   padding-inline: 0;
-   
- }
- #boton-buscar{
+   border-radius: 5px 0 0 5px; /* Bordes redondeados */
+ 
+}
+
+#boton-buscar {
+   width: auto; /* Ajustar al contenido */
+   border: none;
+   color: white;
+   background-color: grey; /* Fondo gris */
   
-width:10%;
-height: auto;
-border: none;
-color:white;
-background-color: green;
- }
-.usuario{
+   display: flex; /* Flexbox para centrar el icono */
+   align-items: center; /* Centrar verticalmente */
+   justify-content: center; /* Centrar horizontalmente */
+   padding: 0 10px; /* Padding horizontal */
+}
 
-   grid-area: usuario;
-   display: flex;
-   justify-content: center;
-   align-self: center;   
-
-} 
-.iconoUsuario{
-   color: gray;
-   align-self: center;
-}
-.letreroUsuario{
-   color: gray;
-   margin-left: 5px;
-   margin-right: 5px;
-}
-.fa-solid {
-   color: gray;
-   align-self: center;
-}
-.carrito{
-   grid-area: carrito;
-   justify-self: center;
-   align-self: center;
-}
-.menu{
-    grid-area: menuu ;
-    display:inline;
-
-}
-.contacto{
-   grid-area: contacto;
-   background-color: bisque;
-}
-.listaMenu{
-   list-style: none;
-   display: flex;
-   flex-wrap: wrap;
-   background-color: bisque;
-   align-content: space-around;
-   justify-content: space-around;
-
-}
 .iconoMenu{
    display: none;
 }
+.listaMenu {
+   display: flex; 
+   flex-wrap: wrap; 
+   justify-content: space-between; 
+   padding: 0; 
+   margin: 2vh; 
+   list-style: none; 
+   width: 100%; 
+}
+
+.listaMenu li {
+   flex-grow: 1; 
+   text-align: center; 
+   padding: 10px;
+   font-size: 1.5em;
+}
+.inferior img{
+   height:7vh;
+   width: auto;
+}
+.derecha{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   margin: 2vw;
+   align-items: center;
+}
+.usuario{
+   display: flex;
+   align-items: center;
+
+}
+.carrito{
+   display: flex;
+   align-items: center;
+
+}
+.certificacion{
+   display: flex;
+   flex-grow: 1;
+}
+.hsr {
+   height: 40vh;
+   display: grid; /* Usar grid */
+   grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+   gap: 20px; /* Espacio entre las columnas */
+   padding: 20px; /* Padding alrededor del contenedor */
+   text-align: center; /* Centrar el texto */
+}
+
+.hsr img {
+   width: 100%; /* Ancho completo del contenedor */
+   height: 39vh; /* Alto fijo para todas las imágenes */
+   object-fit: cover; /* Recortar imágenes para que encajen en el contenedor */
+}
+
+.herramientas, .servicios, .resultados {
+   border: 2px solid black; /* Borde negro */
+   padding: 10px; /* Margen entre el borde y la imagen */
+}
+
+.contenerdorimagen {
+   position: relative; /* Para posicionar el texto sobre la imagen */
+}
+
+.superpuestoimagen {
+   position: absolute; /* Posiciona el texto sobre la imagen */
+   top: 50%; /* Centra verticalmente */
+   left: 50%; /* Centra horizontalmente */
+   transform: translate(-50%, -50%); /* Ajusta el centrado */
+   color: white; /* Color del texto */
+   text-align: center; /* Centrar el texto */
+   background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejor legibilidad */
+   padding: 10px;
+   border-radius: 5px; /* Bordes redondeados */
+}
+
+.superpuestoimagen button {
+   background-color: #0A330F; /* Fondo del botón */
+   color: white; /* Color del texto del botón */
+   border: none; /* Sin borde */
+   padding: 10px 20px; /* Padding del botón */
+   border-radius: 5px; /* Bordes redondeados */
+   cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+/*  */
+.slidermarcas {
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+.marcas {
+   display: flex;
+   animation: scroll 20s linear infinite;
+}
+
+.marcas div {
+   flex: 0 0 auto;
+}
+
+.marcas img {
+   height: 20vh; /* Ajusta este valor según tus necesidades */
+   margin: 0 10vw;
+}
+
+@keyframes scroll {
+   0% {
+       transform: translateX(100%);
+   }
+   100% {
+       transform: translateX(-100%);
+   }
+}
+
+.categoriasProductos{
+   height: 30vh;
+   display: grid;
+   grid-template-rows: 1fr 3fr;
+   align-items: center;
+   justify-items: center;
+}
+.tituloproductos{
+   margin: 2vh;
+   font-size: 3em;
+}
+.enlacescategorias {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   justify-content: center;
+   gap: 20vw; /* Espacio opcional entre columnas */
+}
+
+.enlacescategorias > div {
+  
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: auto;
+}
+.enlacescategorias div>div{
+   color: white;
+   border: 1px solid black; /* Borde negro */
+   background-color: gray;
+   padding: 1vh;
+}
+.recomendaciones{
+   display: grid;
+   grid-template-rows: 1fr 5fr;
+   height: max-content;
+   margin: 2vh;
+   align-items: center;
+   justify-items:center ;
+   height: 55vh;
+}
+.titulorecomendaciones{
+   
+      margin: 2vh;
+      font-size: 3em;
+ 
+}
+.sliderrecomendaciones{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   gap: 5vw;
+}
+
+.tarjetacompra {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 10vw; /* Ajusta según sea necesario */
+   border: 1px solid #ccc;
+   padding: 15px;
+}
+
+.tarjetacompra img {
+   width: 100%; /* La imagen se ajusta al ancho del contenedor */
+   height: auto; /* Mantener la proporción */
+}
+
+.nombreproduco {
+   font-weight: bold; /* Nombre en negrita */
+}
+
+.idproducto {
+   color: grey; /* ID en gris */
+}
+
+.precio {
+   color: black; /* Precio en negro */
+}
+
+.selector {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 10px 0;
+}
+
+.selectoropcion {
+   background-color: #333; /* Fondo gris oscuro */
+   color: white;
+   padding: 5px 10px;
+   cursor: pointer;
+}
+
+.selectorcantidad {
+   background-color: #ccc; /* Fondo gris claro */
+   padding: 5px 10px;
+}
+
+.botonañadir {
+   background-color: #0A330F; /* Fondo del botón */
+   color: white; /* Color del texto del botón */
+   border: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.porque {
+margin: 5vh;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   align-items: center; /* Centra verticalmente */
+   text-align: center; /* Centra horizontalmente */
+}
+
+.imagenporque img {
+   width: 100%; /* Ancho de la imagen ajustado al contenedor */
+   height: auto; /* Mantener la proporción */
+   max-width: 100%; /* Permitir que la imagen se encoja */
+}
+
+.tituloporque {
+   font-size: 2em; /* Tamaño del título */
+}
+
+button {
+   background-color: grey; /* Fondo gris */
+   color: white; /* Texto blanco */
+   padding: 10px 20px; /* Padding del botón */
+   border: none; /* Sin borde */
+   border-radius: 5px; /* Bordes redondeados */
+   cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+   display: inline-block; /* Mostrar como bloque en línea */
+   text-align: center; /* Centrar el texto */
+   margin: 10px auto; /* Centrarse horizontalmente */
+}
+
+.primerasmarcas {
+   display: grid;
+   grid-template-rows: 1fr 1fr; /* Título y luego las imágenes */
+   gap: 20px; /* Espacio entre el título y las imágenes */
+   justify-items: center; /* Centrar contenido horizontalmente */
+   text-align: center;
+}
+
+.titulomarcas {
+   font-size: 2em;
+   font-weight: bold;
+}
+
+.imgprimerasmarcas {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+   gap: 20px; /* Espacio entre las imágenes */
+   width: 100%;
+}
+
+.imgprimerasmarcas div {
+   display: flex;
+   justify-content: center;
+}
+
+.imgprimerasmarcas img {
+   width: 40%; /* Las imágenes ocupan el 20% del contenedor */
+   height: auto; /* Mantener la proporción */
+}
+.iso {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr); /* Cuatro columnas iguales */
+   gap: 20px; /* Espacio entre columnas */
+   align-items: center; /* Centrar verticalmente */
+   text-align: center; 
+   height: 40vh;
+}
+
+.iso img {
+   width: 100%; /* Ancho de la imagen ajustado al contenedor */
+   height: auto; /* Mantener la proporción */
+   max-width: 100%; /* Permitir que la imagen se encoja */
+}
+
+.tituloiso {
+   font-size: 2em; /* Tamaño del título */
+   font-weight: bold;
+}
+footer {
+   background-color: #0A330F; /* Fondo verde */
+   color: white; /* Color del texto en general */
+   padding: 20px; /* Espacio alrededor */
+}
+
+.footersuperior  {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en footersuperior */
+   gap: 20px; /* Espacio entre columnas */
+   text-align: center; /* Centrar texto horizontalmente */
+   align-items: center; /* Centrar contenido verticalmente */
+}
+
+.titulofooter {
+   color: white; /* Títulos en blanco */
+   font-size: 1.2em; /* Ajustar tamaño del título */
+   font-weight: bold; /* Negrita para los títulos */
+}
+
+.opcionesfooter ul, .footerinferior ul {
+   list-style-type: none; /* Sin viñetas en la lista */
+   padding: 0;
+}
+
+.opcionesfooter li, .footerinferior li {
+   color: blue; /* Color azul para los elementos li */
+   margin: 5px 0; /* Espacio entre los elementos li */
+}
+
+button {
+   background-color: grey; /* Fondo gris */
+   color: white; /* Texto blanco */
+   border: none;
+   padding: 10px 20px; /* Ajustar padding */
+   border-radius: 5px; /* Bordes redondeados */
+   cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.certificado img {
+   width: 100%; /* Ajustar la imagen al ancho del contenedor */
+   height: auto; /* Mantener la proporción */
+}
+
+.listafoteerinf {
+   display: flex;
+   justify-content: center; /* Centrar horizontalmente */
+   list-style-type: none; /* Eliminar viñetas */
+   padding: 0;
+   margin: 0;
+}
+
+.listafoteerinf li {
+   margin: 0 10px; /* Espacio entre los elementos de la lista */
+}
+
+.listafoteerinf a {
+   color: white; /* Color del texto */
+   text-decoration: none; /* Sin subrayado */
+}
+
+
+
